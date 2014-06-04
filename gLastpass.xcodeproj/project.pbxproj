@@ -11,6 +11,7 @@
 		BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA97AD193EB96A004186E9 /* AppDelegate.swift */; };
 		BCDA97B0193EB96A004186E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDA97AF193EB96A004186E9 /* Images.xcassets */; };
 		BCDA97BC193EB96A004186E9 /* gLastpassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA97BB193EB96A004186E9 /* gLastpassTests.swift */; };
+		BCE623D6193F0C4000B0B8EF /* Grubby.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE623D5193F0C4000B0B8EF /* Grubby.swift */; };
 		BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF26FCD193EF5EC0087C47C /* DataImportViewController.swift */; };
 		BCF26FD0193EF5EC0087C47C /* DataImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */; };
 		BCF26FD3193EF9970087C47C /* lastpass.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF26FD2193EF9970087C47C /* lastpass.png */; };
@@ -37,9 +38,11 @@
 		BCDA97B5193EB96A004186E9 /* gLastpassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gLastpassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDA97BA193EB96A004186E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCDA97BB193EB96A004186E9 /* gLastpassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gLastpassTests.swift; sourceTree = "<group>"; };
+		BCE623D5193F0C4000B0B8EF /* Grubby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grubby.swift; sourceTree = "<group>"; };
 		BCF26FCD193EF5EC0087C47C /* DataImportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImportViewController.swift; sourceTree = "<group>"; };
 		BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataImportViewController.xib; sourceTree = "<group>"; };
 		BCF26FD2193EF9970087C47C /* lastpass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastpass.png; sourceTree = "<group>"; };
+		BCF26FD4193F007F0087C47C /* gLastpass-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gLastpass-Bridging-Header.h"; sourceTree = "<group>"; };
 		C85BE47E19C6428EBE131AF9 /* libPods-gLastpassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gLastpassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3B7A05CE6D462F966D90E7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +146,8 @@
 		BCF26FC8193EE7470087C47C /* models */ = {
 			isa = PBXGroup;
 			children = (
+				BCF26FD4193F007F0087C47C /* gLastpass-Bridging-Header.h */,
+				BCE623D5193F0C4000B0B8EF /* Grubby.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */,
+				BCE623D6193F0C4000B0B8EF /* Grubby.swift in Sources */,
 				BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +450,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "39B2FC7F-39D2-4899-A6E8-3F8381BE63B9";
+				SWIFT_OBJC_BRIDGING_HEADER = "gLastpass/gLastpass-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -459,6 +466,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "39B2FC7F-39D2-4899-A6E8-3F8381BE63B9";
+				SWIFT_OBJC_BRIDGING_HEADER = "gLastpass/gLastpass-Bridging-Header.h";
 			};
 			name = Release;
 		};

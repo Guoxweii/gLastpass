@@ -10,6 +10,7 @@ import UIKit
 
 class DataImportViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var urlTextfield : UITextField = nil
+    var HUD : MBProgressHUD? = nil
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -20,7 +21,6 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
      	self.title = "数据导入"
-    
         self.edgesForExtendedLayout = UIRectEdge.None
     }
 
@@ -41,11 +41,20 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
     */
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        self.HUD = MBProgressHUD(view: self.view)
+        self.view.addSubview(self.HUD!)
+        self.HUD!.dimBackground = true;
+        self.HUD!.labelText = "loading...."
+        self.HUD!.yOffset = -120.0
+        self.HUD!.show(true)
+        
         self.fetchDataFromUrl()
         return true
     }
 
     func fetchDataFromUrl() {
-    
+    	let grubby = Grubby.INSTANCE
+        var url = self.urlTextfield.text
+        grubby.fetchDataFromUrl("\(url)")
     }
 }

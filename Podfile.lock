@@ -1,10 +1,13 @@
 PODS:
   - JSONKit (1.5pre)
+  - MBProgressHUD (0.8)
 
 DEPENDENCIES:
   - JSONKit (~> 1.5pre)
+  - MBProgressHUD (~> 0.8)
 
 SPEC CHECKSUMS:
   JSONKit: efef3bbd3372ff33f96b9c6f34cf4fe18e74ab69
+  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
 
 COCOAPODS: 0.33.1
