@@ -41,22 +41,52 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
     */
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
-        self.HUD = MBProgressHUD(view: self.view)
-        self.view.addSubview(self.HUD!)
-        self.HUD!.dimBackground = true;
-        self.HUD!.labelText = "loading...."
-        self.HUD!.yOffset = -120.0
-        self.HUD!.show(true)
+        dispatch_async(dispatch_get_main_queue(), {
+            self.create_hud("loading...")
+            self.HUD!.show(true)
+        })
         
         self.fetchDataFromUrl()
         return true
     }
 
     func fetchDataFromUrl() {
-    	let grubby = Grubby.sharedInstance
-        grubby.dataImportCtr = self
-        
         var url = self.urlTextfield.text
+    	let grubby = Grubby.sharedInstance
+        
+        grubby.dataImportCtr = self
         grubby.fetchDataFromUrl("\(url)")
+    }
+    
+    func showInfoWithValidUrl() {
+        dispatch_async(dispatch_get_main_queue(), {
+            if (self.HUD) {
+                self.HUD!.removeFromSuperview()
+                self.HUD = nil
+             }
+            
+            self.create_hud("url地址错误.")
+            
+            self.HUD!.showAnimated(true,
+                    whileExecutingBlock: {
+                        println("start animation")
+                        sleep(1)
+                	}, completionBlock: {
+                        println("animation finish")
+                        if (self.HUD) {
+                            self.HUD!.removeFromSuperview()
+                            self.HUD = nil
+                        }
+                	}
+            )
+        })
+    }
+    
+    func create_hud(title: String) {
+        self.HUD = MBProgressHUD(view: self.view)
+        self.view.addSubview(self.HUD!)
+        self.HUD!.dimBackground = true;
+        self.HUD!.labelText = title
+        self.HUD!.yOffset = -120.0
     }
 }

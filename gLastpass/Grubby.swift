@@ -27,6 +27,13 @@ class Grubby: NSObject {
     }
 
     func fetchDataFromUrl(url: String) {
-    	println(url)
+        var webUrl = NSURL(string: url)
+        var htmlData = NSData(contentsOfURL: webUrl)
+        
+        if (htmlData.length <= 0) {
+        	self.dataImportCtr!.showInfoWithValidUrl()
+        }
+        
+        
     }
 }
