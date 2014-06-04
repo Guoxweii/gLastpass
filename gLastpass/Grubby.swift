@@ -7,14 +7,26 @@
 //
 
 //import Cocoa
-//单例类
 
-enum Grubby {
+class Grubby: NSObject {
     
-    case INSTANCE
+    var dataSource : String? = nil
+    var dataImportCtr : DataImportViewController? = nil
     
-    func fetchDataFromUrl(String) {
-        println("Hello, My First Singleton!")
+    class var sharedInstance:Grubby {
+        get {
+            struct Static {
+                static var instance : Grubby? = nil
+                static var token : dispatch_once_t = 0
+            }
+            
+            dispatch_once(&Static.token) { Static.instance = Grubby() }
+            
+            return Static.instance!
+    	}
     }
-    
+
+    func fetchDataFromUrl(url: String) {
+    	println(url)
+    }
 }

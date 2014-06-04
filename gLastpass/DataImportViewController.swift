@@ -53,7 +53,9 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
     }
 
     func fetchDataFromUrl() {
-    	let grubby = Grubby.INSTANCE
+    	let grubby = Grubby.sharedInstance
+        grubby.dataImportCtr = self
+        
         var url = self.urlTextfield.text
         grubby.fetchDataFromUrl("\(url)")
     }

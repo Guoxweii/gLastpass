@@ -11,7 +11,7 @@
 		BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA97AD193EB96A004186E9 /* AppDelegate.swift */; };
 		BCDA97B0193EB96A004186E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDA97AF193EB96A004186E9 /* Images.xcassets */; };
 		BCDA97BC193EB96A004186E9 /* gLastpassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA97BB193EB96A004186E9 /* gLastpassTests.swift */; };
-		BCE623D6193F0C4000B0B8EF /* Grubby.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE623D5193F0C4000B0B8EF /* Grubby.swift */; };
+		BCE623D8193F488100B0B8EF /* Grubby.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE623D7193F488100B0B8EF /* Grubby.swift */; };
 		BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF26FCD193EF5EC0087C47C /* DataImportViewController.swift */; };
 		BCF26FD0193EF5EC0087C47C /* DataImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */; };
 		BCF26FD3193EF9970087C47C /* lastpass.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF26FD2193EF9970087C47C /* lastpass.png */; };
@@ -38,7 +38,7 @@
 		BCDA97B5193EB96A004186E9 /* gLastpassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gLastpassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDA97BA193EB96A004186E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCDA97BB193EB96A004186E9 /* gLastpassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gLastpassTests.swift; sourceTree = "<group>"; };
-		BCE623D5193F0C4000B0B8EF /* Grubby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grubby.swift; sourceTree = "<group>"; };
+		BCE623D7193F488100B0B8EF /* Grubby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grubby.swift; sourceTree = "<group>"; };
 		BCF26FCD193EF5EC0087C47C /* DataImportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImportViewController.swift; sourceTree = "<group>"; };
 		BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataImportViewController.xib; sourceTree = "<group>"; };
 		BCF26FD2193EF9970087C47C /* lastpass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastpass.png; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF26FD4193F007F0087C47C /* gLastpass-Bridging-Header.h */,
-				BCE623D5193F0C4000B0B8EF /* Grubby.swift */,
+				BCE623D7193F488100B0B8EF /* Grubby.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */,
-				BCE623D6193F0C4000B0B8EF /* Grubby.swift in Sources */,
+				BCE623D8193F488100B0B8EF /* Grubby.swift in Sources */,
 				BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
