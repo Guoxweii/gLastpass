@@ -8,7 +8,8 @@
 
 import UIKit
 
-class DataImportViewController: UIViewController {
+class DataImportViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet var urlTextfield : UITextField = nil
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -38,5 +39,13 @@ class DataImportViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        self.fetchDataFromUrl()
+        return true
+    }
 
+    func fetchDataFromUrl() {
+    
+    }
 }
