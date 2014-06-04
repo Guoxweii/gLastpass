@@ -60,7 +60,7 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
     
     func showInfoWithValidUrl() {
         dispatch_async(dispatch_get_main_queue(), {
-            if (self.HUD) {
+            if self.HUD {
                 self.HUD!.removeFromSuperview()
                 self.HUD = nil
              }
@@ -73,7 +73,7 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
                         sleep(1)
                 	}, completionBlock: {
                         println("animation finish")
-                        if (self.HUD) {
+                        if self.HUD {
                             self.HUD!.removeFromSuperview()
                             self.HUD = nil
                         }

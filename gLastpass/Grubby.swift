@@ -29,11 +29,25 @@ class Grubby: NSObject {
     func fetchDataFromUrl(url: String) {
         var webUrl = NSURL(string: url)
         var htmlData = NSData(contentsOfURL: webUrl)
-        
-        if (htmlData.length <= 0) {
+        if htmlData.length <= 0 {
         	self.dataImportCtr!.showInfoWithValidUrl()
+            return
         }
         
+        var doc = TFHpple(HTMLData: htmlData)
+        var elements : Array = doc.searchWithXPathQuery("//pre")
+        if elements.count == 0 {
+            self.dataImportCtr!.showInfoWithValidUrl()
+            return
+        }
         
+        var passInfo : String? = elements[0].text
+        self.parse(passInfo!)
+    }
+    
+    func parse(passInfo: String) {
+    	AppInfo.sharedInstance.store_password_info(passInfo)
+        
+//        var elements : Array = passInfo.split("\n")
     }
 }
