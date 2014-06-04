@@ -33,6 +33,7 @@
 		0B8844A0222F43D88025F9B3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E8B202B72C24A3D9CBF41AD /* Pods-gLastpassTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gLastpassTests.xcconfig"; path = "Pods/Pods-gLastpassTests.xcconfig"; sourceTree = "<group>"; };
 		BCCAB41F193F7D7D00BFC9AE /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		BCCAB421193FD7EA00BFC9AE /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		BCDA97A8193EB96A004186E9 /* gLastpass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gLastpass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDA97AC193EB96A004186E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCDA97AD193EB96A004186E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 				BCF26FD4193F007F0087C47C /* gLastpass-Bridging-Header.h */,
 				BCE623D7193F488100B0B8EF /* Grubby.swift */,
 				BCCAB41F193F7D7D00BFC9AE /* AppInfo.swift */,
+				BCCAB421193FD7EA00BFC9AE /* MyPlayground.playground */,
 			);
 			name = models;
 			sourceTree = "<group>";
