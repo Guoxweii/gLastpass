@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
+        self.setRootView()
         self.window!.makeKeyAndVisible()
         return true
     }
@@ -44,6 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func setRootView() {
+        var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
+        var baseCtr = UINavigationController(rootViewController: mainCtr)
+        self.window!.rootViewController = baseCtr
+    }
 }
 

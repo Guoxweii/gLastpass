@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9986B1CCCFC3479CB80E02C3 /* libPods-gLastpassTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C85BE47E19C6428EBE131AF9 /* libPods-gLastpassTests.a */; };
 		BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA97AD193EB96A004186E9 /* AppDelegate.swift */; };
 		BCDA97B0193EB96A004186E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDA97AF193EB96A004186E9 /* Images.xcassets */; };
 		BCDA97BC193EB96A004186E9 /* gLastpassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA97BB193EB96A004186E9 /* gLastpassTests.swift */; };
+		BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF26FCD193EF5EC0087C47C /* DataImportViewController.swift */; };
+		BCF26FD0193EF5EC0087C47C /* DataImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */; };
+		BCF26FD3193EF9970087C47C /* lastpass.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF26FD2193EF9970087C47C /* lastpass.png */; };
+		E8D4041E3B4249A19D6E0C0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8844A0222F43D88025F9B3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B8844A0222F43D88025F9B3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E8B202B72C24A3D9CBF41AD /* Pods-gLastpassTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gLastpassTests.xcconfig"; path = "Pods/Pods-gLastpassTests.xcconfig"; sourceTree = "<group>"; };
 		BCDA97A8193EB96A004186E9 /* gLastpass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gLastpass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDA97AC193EB96A004186E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCDA97AD193EB96A004186E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +37,11 @@
 		BCDA97B5193EB96A004186E9 /* gLastpassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gLastpassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDA97BA193EB96A004186E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCDA97BB193EB96A004186E9 /* gLastpassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gLastpassTests.swift; sourceTree = "<group>"; };
+		BCF26FCD193EF5EC0087C47C /* DataImportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImportViewController.swift; sourceTree = "<group>"; };
+		BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataImportViewController.xib; sourceTree = "<group>"; };
+		BCF26FD2193EF9970087C47C /* lastpass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastpass.png; sourceTree = "<group>"; };
+		C85BE47E19C6428EBE131AF9 /* libPods-gLastpassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gLastpassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3B7A05CE6D462F966D90E7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8D4041E3B4249A19D6E0C0B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9986B1CCCFC3479CB80E02C3 /* libPods-gLastpassTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +70,9 @@
 				BCDA97AA193EB96A004186E9 /* gLastpass */,
 				BCDA97B8193EB96A004186E9 /* gLastpassTests */,
 				BCDA97A9193EB96A004186E9 /* Products */,
+				ED3B7A05CE6D462F966D90E7 /* Pods.xcconfig */,
+				CA5E6A7326A040B387707993 /* Frameworks */,
+				9E8B202B72C24A3D9CBF41AD /* Pods-gLastpassTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +88,13 @@
 		BCDA97AA193EB96A004186E9 /* gLastpass */ = {
 			isa = PBXGroup;
 			children = (
+				BCF26FC8193EE7470087C47C /* models */,
+				BCF26FC7193EE73F0087C47C /* views */,
+				BCF26FC6193EE7340087C47C /* controllers */,
 				BCDA97AD193EB96A004186E9 /* AppDelegate.swift */,
 				BCDA97AF193EB96A004186E9 /* Images.xcassets */,
 				BCDA97AB193EB96A004186E9 /* Supporting Files */,
+				BCF26FD1193EF9410087C47C /* resources */,
 			);
 			path = gLastpass;
 			sourceTree = "<group>";
@@ -103,6 +124,46 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BCF26FC6193EE7340087C47C /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BCF26FCD193EF5EC0087C47C /* DataImportViewController.swift */,
+				BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		BCF26FC7193EE73F0087C47C /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		BCF26FC8193EE7470087C47C /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		BCF26FD1193EF9410087C47C /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				BCF26FD2193EF9970087C47C /* lastpass.png */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		CA5E6A7326A040B387707993 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B8844A0222F43D88025F9B3 /* libPods.a */,
+				C85BE47E19C6428EBE131AF9 /* libPods-gLastpassTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCDA97BF193EB96A004186E9 /* Build configuration list for PBXNativeTarget "gLastpass" */;
 			buildPhases = (
+				902B456694EF4C2C9991E4E0 /* Check Pods Manifest.lock */,
 				BCDA97A4193EB96A004186E9 /* Sources */,
 				BCDA97A5193EB96A004186E9 /* Frameworks */,
 				BCDA97A6193EB96A004186E9 /* Resources */,
+				B16A5EBF5AA94AD993004411 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCDA97C2193EB96A004186E9 /* Build configuration list for PBXNativeTarget "gLastpassTests" */;
 			buildPhases = (
+				6C16612778674E52A94DEDB5 /* Check Pods Manifest.lock */,
 				BCDA97B1193EB96A004186E9 /* Sources */,
 				BCDA97B2193EB96A004186E9 /* Frameworks */,
 				BCDA97B3193EB96A004186E9 /* Resources */,
+				DCE3FE527729402B83E279F3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,6 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCDA97B0193EB96A004186E9 /* Images.xcassets in Resources */,
+				BCF26FD3193EF9970087C47C /* lastpass.png in Resources */,
+				BCF26FD0193EF5EC0087C47C /* DataImportViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,12 +263,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6C16612778674E52A94DEDB5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		902B456694EF4C2C9991E4E0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B16A5EBF5AA94AD993004411 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCE3FE527729402B83E279F3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-gLastpassTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BCDA97A4193EB96A004186E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */,
+				BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +434,7 @@
 		};
 		BCDA97C0193EB96A004186E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED3B7A05CE6D462F966D90E7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -317,6 +449,7 @@
 		};
 		BCDA97C1193EB96A004186E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED3B7A05CE6D462F966D90E7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -331,6 +464,7 @@
 		};
 		BCDA97C3193EB96A004186E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E8B202B72C24A3D9CBF41AD /* Pods-gLastpassTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/gLastpass.app/gLastpass";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -351,6 +485,7 @@
 		};
 		BCDA97C4193EB96A004186E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E8B202B72C24A3D9CBF41AD /* Pods-gLastpassTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/gLastpass.app/gLastpass";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -384,6 +519,7 @@
 				BCDA97C1193EB96A004186E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCDA97C2193EB96A004186E9 /* Build configuration list for PBXNativeTarget "gLastpassTests" */ = {
 			isa = XCConfigurationList;
@@ -392,6 +528,7 @@
 				BCDA97C4193EB96A004186E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
