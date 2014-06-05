@@ -4,7 +4,7 @@ pod 'JSONKit', '~> 1.5pre'
 pod 'hpple', '~> 0.2.0'
 pod 'MBProgressHUD', '~> 0.8'
 pod 'SDWebImage', '~> 3.6'
-# pod 'APPinViewController', '~> 1.0.2'
+pod 'APPinViewController', '~> 1.0.2'
 
 # target :gLastpassTests, :exclusive => true do  
 #    pod 'Kiwi/XCTest'
