@@ -29,17 +29,6 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // #pragma mark - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         dispatch_async(dispatch_get_main_queue(), {
             self.createHud("loading...")
@@ -97,5 +86,10 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
                 self.HUD = nil
             }
         })
+        
+        if Grubby.sharedInstance.dataSource.count > 0 {
+        	let listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
+            self.navigationController.setViewControllers([listCtr],animated: true)
+        }
     }
 }

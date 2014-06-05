@@ -18,6 +18,11 @@
 		BCF26FD3193EF9970087C47C /* lastpass.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF26FD2193EF9970087C47C /* lastpass.png */; };
 		BCF5C01E194026CD0081E33D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5C01D194026CD0081E33D /* Category.swift */; };
 		BCF5C020194028ED0081E33D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5C01F194028ED0081E33D /* Account.swift */; };
+		BCF5C023194037AA0081E33D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5C021194037AA0081E33D /* ListViewController.swift */; };
+		BCF5C024194037AA0081E33D /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF5C022194037AA0081E33D /* ListViewController.xib */; };
+		BCF5C027194039240081E33D /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5C025194039240081E33D /* BaseCell.swift */; };
+		BCF5C028194039240081E33D /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF5C026194039240081E33D /* BaseCell.xib */; };
+		BCF5C02A19403C140081E33D /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF5C02919403C140081E33D /* bg@2x.png */; };
 		E8D4041E3B4249A19D6E0C0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8844A0222F43D88025F9B3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +55,11 @@
 		BCF26FD4193F007F0087C47C /* gLastpass-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gLastpass-Bridging-Header.h"; sourceTree = "<group>"; };
 		BCF5C01D194026CD0081E33D /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BCF5C01F194028ED0081E33D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		BCF5C021194037AA0081E33D /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		BCF5C022194037AA0081E33D /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		BCF5C025194039240081E33D /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		BCF5C026194039240081E33D /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCell.xib; sourceTree = "<group>"; };
+		BCF5C02919403C140081E33D /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
 		C85BE47E19C6428EBE131AF9 /* libPods-gLastpassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gLastpassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3B7A05CE6D462F966D90E7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +149,8 @@
 			children = (
 				BCF26FCD193EF5EC0087C47C /* DataImportViewController.swift */,
 				BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */,
+				BCF5C021194037AA0081E33D /* ListViewController.swift */,
+				BCF5C022194037AA0081E33D /* ListViewController.xib */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -146,6 +158,8 @@
 		BCF26FC7193EE73F0087C47C /* views */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5C025194039240081E33D /* BaseCell.swift */,
+				BCF5C026194039240081E33D /* BaseCell.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -166,6 +180,7 @@
 		BCF26FD1193EF9410087C47C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5C02919403C140081E33D /* bg@2x.png */,
 				BCF26FD2193EF9970087C47C /* lastpass.png */,
 			);
 			name = resources;
@@ -266,6 +281,9 @@
 			files = (
 				BCDA97B0193EB96A004186E9 /* Images.xcassets in Resources */,
 				BCF26FD3193EF9970087C47C /* lastpass.png in Resources */,
+				BCF5C028194039240081E33D /* BaseCell.xib in Resources */,
+				BCF5C02A19403C140081E33D /* bg@2x.png in Resources */,
+				BCF5C024194037AA0081E33D /* ListViewController.xib in Resources */,
 				BCF26FD0193EF5EC0087C47C /* DataImportViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,8 +369,10 @@
 				BCF5C01E194026CD0081E33D /* Category.swift in Sources */,
 				BCCAB420193F7D7D00BFC9AE /* AppInfo.swift in Sources */,
 				BCE623D8193F488100B0B8EF /* Grubby.swift in Sources */,
+				BCF5C027194039240081E33D /* BaseCell.swift in Sources */,
 				BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */,
 				BCF5C020194028ED0081E33D /* Account.swift in Sources */,
+				BCF5C023194037AA0081E33D /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
