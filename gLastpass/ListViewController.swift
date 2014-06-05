@@ -84,6 +84,15 @@ class ListViewController: UITableViewController {
         
         cell.name.text = accounts[indexPath!.row].name
         
+        var passwordUrl = NSURL(string: accounts[indexPath!.row].url)
+        var logoUrl: String
+        if passwordUrl.port == nil {
+            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host)/favicon.ico"
+        } else {
+            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host):\(passwordUrl.port)/favicon.ico"
+        }
+        cell.logo.setImageWithURL(NSURL(string: logoUrl), placeholderImage: UIImage(named: "bg"))
+        
     	return cell
     }
 }
