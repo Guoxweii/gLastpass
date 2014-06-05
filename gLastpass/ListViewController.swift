@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ListViewController: UITableViewController {
+class ListViewController: UITableViewController, UIActionSheetDelegate {
     @IBOutlet var resetButton : UIButton = nil
+    @IBOutlet var searchButton : UIButton = nil
+    
+    var searchCtr : SearchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)
     
     init(style: UITableViewStyle) {
         super.init(style: style)
@@ -21,7 +24,16 @@ class ListViewController: UITableViewController {
         // Custom initialization
     }
     
+    @IBAction func search(sender : UIButton) {
+        
+        self.navigationController.view.addSubview(self.searchCtr.view)
+    }
+    
     @IBAction func resetDataSource(sender : UIButton) {
+//        let actionSheet = UIActionSheet(title: "",delegate: self, cancelButtonTitle: "取消",destructiveButtonTitle: "重置")
+//        actionSheet.actionSheetStyle = UIActionSheetStyle.Default
+//        actionSheet.showInView(self.view)
+        
     	Grubby.sharedInstance.resetDataSource()
         
 		var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
@@ -38,6 +50,9 @@ class ListViewController: UITableViewController {
         self.tableView.registerNib(nib, forCellReuseIdentifier: baseName)
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: self.resetButton)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.searchButton)
+        
+        self.searchCtr.listCtr = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -120,6 +135,18 @@ class ListViewController: UITableViewController {
         detailCtr.title = accounts[indexPath!.row].name
         detailCtr.login = accounts[indexPath!.row].login
         detailCtr.password = accounts[indexPath!.row].password
+        self.navigationController.pushViewController(detailCtr, animated: true)
+    }
+    
+    func cancelSearch() {
+    	self.searchCtr.view.removeFromSuperview()
+    }
+    
+    func showSearchResult(account: Account) {
+        var detailCtr = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        detailCtr.title = account.name
+        detailCtr.login = account.login
+        detailCtr.password = account.password
         self.navigationController.pushViewController(detailCtr, animated: true)
     }
 }

@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="gLastpass" customModuleProvider="target">
             <connections>
                 <outlet property="resetButton" destination="NR5-NO-2PE" id="koC-6v-wr3"/>
+                <outlet property="searchButton" destination="5LA-cA-pLZ" id="xgU-qg-seI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,5 +36,19 @@
             </connections>
             <point key="canvasLocation" x="61.5" y="230.5"/>
         </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5LA-cA-pLZ">
+            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Button" backgroundImage="search.png">
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <connections>
+                <action selector="search:" destination="-1" eventType="touchDown" id="F1N-la-Uwf"/>
+            </connections>
+            <point key="canvasLocation" x="268" y="219"/>
+        </button>
     </objects>
+    <resources>
+        <image name="search.png" width="64" height="64"/>
+    </resources>
 </document>

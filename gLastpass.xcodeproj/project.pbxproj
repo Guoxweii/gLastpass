@@ -25,6 +25,9 @@
 		BCF5C027194039240081E33D /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5C025194039240081E33D /* BaseCell.swift */; };
 		BCF5C028194039240081E33D /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF5C026194039240081E33D /* BaseCell.xib */; };
 		BCF5C02A19403C140081E33D /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF5C02919403C140081E33D /* bg@2x.png */; };
+		BCF6DE201940AFAB00C0EAFB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6DE1E1940AFAB00C0EAFB /* SearchViewController.swift */; };
+		BCF6DE211940AFAB00C0EAFB /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF6DE1F1940AFAB00C0EAFB /* SearchViewController.xib */; };
+		BCF6DE231940B51400C0EAFB /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF6DE221940B51400C0EAFB /* search@2x.png */; };
 		E8D4041E3B4249A19D6E0C0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8844A0222F43D88025F9B3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,9 @@
 		BCF5C025194039240081E33D /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		BCF5C026194039240081E33D /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCell.xib; sourceTree = "<group>"; };
 		BCF5C02919403C140081E33D /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		BCF6DE1E1940AFAB00C0EAFB /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BCF6DE1F1940AFAB00C0EAFB /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		BCF6DE221940B51400C0EAFB /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		C85BE47E19C6428EBE131AF9 /* libPods-gLastpassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gLastpassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3B7A05CE6D462F966D90E7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +163,8 @@
 				BCF5C022194037AA0081E33D /* ListViewController.xib */,
 				BC720D4F194089D3003B7AB9 /* DetailViewController.swift */,
 				BC720D50194089D3003B7AB9 /* DetailViewController.xib */,
+				BCF6DE1E1940AFAB00C0EAFB /* SearchViewController.swift */,
+				BCF6DE1F1940AFAB00C0EAFB /* SearchViewController.xib */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 		BCF26FD1193EF9410087C47C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				BCF6DE221940B51400C0EAFB /* search@2x.png */,
 				BCF5C02919403C140081E33D /* bg@2x.png */,
 				BCF26FD2193EF9970087C47C /* lastpass.png */,
 			);
@@ -285,12 +294,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF6DE231940B51400C0EAFB /* search@2x.png in Resources */,
 				BCDA97B0193EB96A004186E9 /* Images.xcassets in Resources */,
 				BCF26FD3193EF9970087C47C /* lastpass.png in Resources */,
 				BC720D52194089D3003B7AB9 /* DetailViewController.xib in Resources */,
 				BCF5C028194039240081E33D /* BaseCell.xib in Resources */,
 				BCF5C02A19403C140081E33D /* bg@2x.png in Resources */,
 				BCF5C024194037AA0081E33D /* ListViewController.xib in Resources */,
+				BCF6DE211940AFAB00C0EAFB /* SearchViewController.xib in Resources */,
 				BCF26FD0193EF5EC0087C47C /* DataImportViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF6DE201940AFAB00C0EAFB /* SearchViewController.swift in Sources */,
 				BC720D51194089D3003B7AB9 /* DetailViewController.swift in Sources */,
 				BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */,
 				BCF5C01E194026CD0081E33D /* Category.swift in Sources */,
