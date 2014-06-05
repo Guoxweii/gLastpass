@@ -10,7 +10,7 @@
 
 class Grubby: NSObject {
     
-    var dataSource : String? = nil
+    var dataSource: Dictionary<String, Category> = Dictionary<String, Category>()
     var dataImportCtr : DataImportViewController? = nil
     
     class var sharedInstance:Grubby {
@@ -43,11 +43,41 @@ class Grubby: NSObject {
         
         var passInfo : String? = elements[0].text
         self.parse(passInfo!)
+		self.dataImportCtr!.fetchDataComplete()
     }
     
     func parse(passInfo: String) {
     	AppInfo.sharedInstance.store_password_info(passInfo)
+        var elements = passInfo.componentsSeparatedByString("\n")
         
-//        var elements : Array = passInfo.split("\n")
+        if(elements.count < 2) {
+        	return
+        }
+        
+        self.dataSource.removeAll()
+        elements.removeAtIndex(0)
+        
+        for element in elements {
+            var elementArray = element.componentsSeparatedByString(",")
+            
+            if elementArray.count < 7 {
+                continue
+            }
+            
+            var groupName = elementArray[5]
+            
+            if groupName.isEmpty {
+                groupName = "未分组"
+            }
+            var lineObject : Category? = self.dataSource[groupName]
+        
+            if lineObject == nil {
+                lineObject = Category(name: groupName)
+                self.dataSource[groupName] = lineObject
+            }
+        
+            var account = Account(name: elementArray[4], url: elementArray[0], login: elementArray[1], password: elementArray[2], category: lineObject!)
+            lineObject!.accounts.append(account)
+        }
     }
 }

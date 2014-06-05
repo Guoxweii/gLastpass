@@ -42,7 +42,7 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         dispatch_async(dispatch_get_main_queue(), {
-            self.create_hud("loading...")
+            self.createHud("loading...")
             self.HUD!.show(true)
         })
         
@@ -65,7 +65,7 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
                 self.HUD = nil
              }
             
-            self.create_hud("url地址错误.")
+            self.createHud("url地址错误.")
             
             self.HUD!.showAnimated(true,
                     whileExecutingBlock: {
@@ -82,11 +82,20 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    func create_hud(title: String) {
+    func createHud(title: String) {
         self.HUD = MBProgressHUD(view: self.view)
         self.view.addSubview(self.HUD!)
         self.HUD!.dimBackground = true;
         self.HUD!.labelText = title
         self.HUD!.yOffset = -120.0
+    }
+    
+    func fetchDataComplete() {
+        dispatch_async(dispatch_get_main_queue(), {
+            if self.HUD {
+                self.HUD!.removeFromSuperview()
+                self.HUD = nil
+            }
+        })
     }
 }

@@ -16,6 +16,8 @@
 		BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF26FCD193EF5EC0087C47C /* DataImportViewController.swift */; };
 		BCF26FD0193EF5EC0087C47C /* DataImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */; };
 		BCF26FD3193EF9970087C47C /* lastpass.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF26FD2193EF9970087C47C /* lastpass.png */; };
+		BCF5C01E194026CD0081E33D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5C01D194026CD0081E33D /* Category.swift */; };
+		BCF5C020194028ED0081E33D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5C01F194028ED0081E33D /* Account.swift */; };
 		E8D4041E3B4249A19D6E0C0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8844A0222F43D88025F9B3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataImportViewController.xib; sourceTree = "<group>"; };
 		BCF26FD2193EF9970087C47C /* lastpass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastpass.png; sourceTree = "<group>"; };
 		BCF26FD4193F007F0087C47C /* gLastpass-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gLastpass-Bridging-Header.h"; sourceTree = "<group>"; };
+		BCF5C01D194026CD0081E33D /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BCF5C01F194028ED0081E33D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		C85BE47E19C6428EBE131AF9 /* libPods-gLastpassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gLastpassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3B7A05CE6D462F966D90E7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,10 +153,12 @@
 		BCF26FC8193EE7470087C47C /* models */ = {
 			isa = PBXGroup;
 			children = (
+				BCCAB421193FD7EA00BFC9AE /* MyPlayground.playground */,
 				BCF26FD4193F007F0087C47C /* gLastpass-Bridging-Header.h */,
 				BCE623D7193F488100B0B8EF /* Grubby.swift */,
 				BCCAB41F193F7D7D00BFC9AE /* AppInfo.swift */,
-				BCCAB421193FD7EA00BFC9AE /* MyPlayground.playground */,
+				BCF5C01D194026CD0081E33D /* Category.swift */,
+				BCF5C01F194028ED0081E33D /* Account.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -342,9 +348,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */,
+				BCF5C01E194026CD0081E33D /* Category.swift in Sources */,
 				BCCAB420193F7D7D00BFC9AE /* AppInfo.swift in Sources */,
 				BCE623D8193F488100B0B8EF /* Grubby.swift in Sources */,
 				BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */,
+				BCF5C020194028ED0081E33D /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
