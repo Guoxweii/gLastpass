@@ -80,4 +80,9 @@ class Grubby: NSObject {
             lineObject!.accounts.append(account)
         }
     }
+    
+    func resetDataSource() {
+        AppInfo.sharedInstance.store_password_info(nil)
+        self.dataSource = Dictionary<String, Category>()
+    }
 }

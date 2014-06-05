@@ -22,12 +22,12 @@ class AppInfo: NSObject {
     	}
     }
     
-    func current_password_info() -> String {
+    func current_password_info() -> String? {
 		let defaults = NSUserDefaults.standardUserDefaults()
-        return defaults.objectForKey("password_info") as String!
+        return defaults.stringForKey("password_info")
     }
     
-    func store_password_info(info: String) {
+    func store_password_info(info: String?) {
         NSUserDefaults.standardUserDefaults().setObject(info, forKey: "password_info")
         NSUserDefaults.standardUserDefaults().synchronize()
     }

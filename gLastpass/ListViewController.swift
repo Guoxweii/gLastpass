@@ -9,6 +9,7 @@
 import UIKit
 
 class ListViewController: UITableViewController {
+    @IBOutlet var resetButton : UIButton = nil
     
     init(style: UITableViewStyle) {
         super.init(style: style)
@@ -20,6 +21,13 @@ class ListViewController: UITableViewController {
         // Custom initialization
     }
     
+    @IBAction func resetDataSource(sender : UIButton) {
+    	Grubby.sharedInstance.resetDataSource()
+        
+		var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
+        self.navigationController.setViewControllers([mainCtr],animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +36,8 @@ class ListViewController: UITableViewController {
         let baseName = "baseCell";
         let nib = UINib(nibName: "BaseCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: baseName)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: self.resetButton)
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,5 +104,22 @@ class ListViewController: UITableViewController {
         cell.logo.setImageWithURL(NSURL(string: logoUrl), placeholderImage: UIImage(named: "bg"))
         
     	return cell
+    }
+    
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        let dataSource = Grubby.sharedInstance.dataSource
+        var keys = Array<String>()
+        for (key, category) in dataSource {
+            keys.append(key)
+        }
+        var currentKey = keys[indexPath!.section]
+        var category = dataSource[currentKey] as Category
+        var accounts = category.accounts
+        
+        var detailCtr = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        detailCtr.title = accounts[indexPath!.row].name
+        detailCtr.login = accounts[indexPath!.row].login
+        detailCtr.password = accounts[indexPath!.row].password
+        self.navigationController.pushViewController(detailCtr, animated: true)
     }
 }

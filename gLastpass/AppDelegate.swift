@@ -46,9 +46,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setRootView() {
-        var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
-        var baseCtr = UINavigationController(rootViewController: mainCtr)
-        self.window!.rootViewController = baseCtr
+        if AppInfo.sharedInstance.current_password_info() == nil {
+            var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
+            var baseCtr = UINavigationController(rootViewController: mainCtr)
+            self.window!.rootViewController = baseCtr
+        } else {
+        	Grubby.sharedInstance.parse(AppInfo.sharedInstance.current_password_info()!)
+            
+        	var listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
+            var baseCtr = UINavigationController(rootViewController: listCtr)
+            self.window!.rootViewController = baseCtr
+        }
     }
 }
 

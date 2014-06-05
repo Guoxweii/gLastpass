@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9986B1CCCFC3479CB80E02C3 /* libPods-gLastpassTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C85BE47E19C6428EBE131AF9 /* libPods-gLastpassTests.a */; };
+		BC720D51194089D3003B7AB9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC720D4F194089D3003B7AB9 /* DetailViewController.swift */; };
+		BC720D52194089D3003B7AB9 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC720D50194089D3003B7AB9 /* DetailViewController.xib */; };
 		BCCAB420193F7D7D00BFC9AE /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCAB41F193F7D7D00BFC9AE /* AppInfo.swift */; };
 		BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA97AD193EB96A004186E9 /* AppDelegate.swift */; };
 		BCDA97B0193EB96A004186E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDA97AF193EB96A004186E9 /* Images.xcassets */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		0B8844A0222F43D88025F9B3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E8B202B72C24A3D9CBF41AD /* Pods-gLastpassTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gLastpassTests.xcconfig"; path = "Pods/Pods-gLastpassTests.xcconfig"; sourceTree = "<group>"; };
+		BC720D4F194089D3003B7AB9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BC720D50194089D3003B7AB9 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		BCCAB41F193F7D7D00BFC9AE /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		BCCAB421193FD7EA00BFC9AE /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		BCDA97A8193EB96A004186E9 /* gLastpass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gLastpass.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +155,8 @@
 				BCF26FCE193EF5EC0087C47C /* DataImportViewController.xib */,
 				BCF5C021194037AA0081E33D /* ListViewController.swift */,
 				BCF5C022194037AA0081E33D /* ListViewController.xib */,
+				BC720D4F194089D3003B7AB9 /* DetailViewController.swift */,
+				BC720D50194089D3003B7AB9 /* DetailViewController.xib */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 			files = (
 				BCDA97B0193EB96A004186E9 /* Images.xcassets in Resources */,
 				BCF26FD3193EF9970087C47C /* lastpass.png in Resources */,
+				BC720D52194089D3003B7AB9 /* DetailViewController.xib in Resources */,
 				BCF5C028194039240081E33D /* BaseCell.xib in Resources */,
 				BCF5C02A19403C140081E33D /* bg@2x.png in Resources */,
 				BCF5C024194037AA0081E33D /* ListViewController.xib in Resources */,
@@ -365,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC720D51194089D3003B7AB9 /* DetailViewController.swift in Sources */,
 				BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */,
 				BCF5C01E194026CD0081E33D /* Category.swift in Sources */,
 				BCCAB420193F7D7D00BFC9AE /* AppInfo.swift in Sources */,
