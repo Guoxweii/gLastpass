@@ -31,4 +31,24 @@ class AppInfo: NSObject {
         NSUserDefaults.standardUserDefaults().setObject(info, forKey: "password_info")
         NSUserDefaults.standardUserDefaults().synchronize()
     }
+    
+    func current_pin() -> String? {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        return defaults.stringForKey("pin")?
+    }
+    
+    func store_pin(pin: String?) {
+        NSUserDefaults.standardUserDefaults().setObject(pin, forKey: "pin")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    func current_valid() -> String? {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        return defaults.stringForKey("valid")?
+    }
+    
+    func store_valid(valid: String?) {
+        NSUserDefaults.standardUserDefaults().setObject(valid, forKey: "valid")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
 }

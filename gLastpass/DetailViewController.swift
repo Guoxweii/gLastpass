@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    @IBOutlet var resetPinButton : UIButton = nil
     var password: String? = nil
     var login: String? = nil
     var HUD : MBProgressHUD? = nil
@@ -18,6 +19,12 @@ class DetailViewController: UIViewController {
 
     @IBOutlet var copyLoginButton : UIButton = nil
     @IBOutlet var copyPasswordButton : UIButton = nil
+    
+    @IBAction func resetPin(sender : UIButton) {
+        var pinCtr = PinViewController(nibName: "PinViewController", bundle: nil)
+        pinCtr.isEdit = true
+        self.presentViewController(pinCtr, animated: true, completion: nil)
+    }
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -93,6 +100,8 @@ class DetailViewController: UIViewController {
         self.copyPasswordButton.layer.cornerRadius = 5
         self.copyPasswordButton.layer.borderWidth = 1
         self.copyPasswordButton.layer.borderColor = UIColor.blueColor().CGColor
+        
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.resetPinButton)
     }
 
     override func didReceiveMemoryWarning() {

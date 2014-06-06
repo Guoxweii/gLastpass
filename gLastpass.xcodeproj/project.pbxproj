@@ -28,6 +28,8 @@
 		BCF6DE201940AFAB00C0EAFB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6DE1E1940AFAB00C0EAFB /* SearchViewController.swift */; };
 		BCF6DE211940AFAB00C0EAFB /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF6DE1F1940AFAB00C0EAFB /* SearchViewController.xib */; };
 		BCF6DE231940B51400C0EAFB /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF6DE221940B51400C0EAFB /* search@2x.png */; };
+		BCF6DE2B1941524300C0EAFB /* PinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF6DE291941524300C0EAFB /* PinViewController.m */; };
+		BCF6DE2C1941524300C0EAFB /* PinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF6DE2A1941524300C0EAFB /* PinViewController.xib */; };
 		E8D4041E3B4249A19D6E0C0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8844A0222F43D88025F9B3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,9 @@
 		BCF6DE1E1940AFAB00C0EAFB /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BCF6DE1F1940AFAB00C0EAFB /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		BCF6DE221940B51400C0EAFB /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		BCF6DE281941524300C0EAFB /* PinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinViewController.h; sourceTree = "<group>"; };
+		BCF6DE291941524300C0EAFB /* PinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinViewController.m; sourceTree = "<group>"; };
+		BCF6DE2A1941524300C0EAFB /* PinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PinViewController.xib; sourceTree = "<group>"; };
 		C85BE47E19C6428EBE131AF9 /* libPods-gLastpassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gLastpassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3B7A05CE6D462F966D90E7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +170,9 @@
 				BC720D50194089D3003B7AB9 /* DetailViewController.xib */,
 				BCF6DE1E1940AFAB00C0EAFB /* SearchViewController.swift */,
 				BCF6DE1F1940AFAB00C0EAFB /* SearchViewController.xib */,
+				BCF6DE281941524300C0EAFB /* PinViewController.h */,
+				BCF6DE291941524300C0EAFB /* PinViewController.m */,
+				BCF6DE2A1941524300C0EAFB /* PinViewController.xib */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -296,6 +304,7 @@
 			files = (
 				BCF6DE231940B51400C0EAFB /* search@2x.png in Resources */,
 				BCDA97B0193EB96A004186E9 /* Images.xcassets in Resources */,
+				BCF6DE2C1941524300C0EAFB /* PinViewController.xib in Resources */,
 				BCF26FD3193EF9970087C47C /* lastpass.png in Resources */,
 				BC720D52194089D3003B7AB9 /* DetailViewController.xib in Resources */,
 				BCF5C028194039240081E33D /* BaseCell.xib in Resources */,
@@ -389,6 +398,7 @@
 				BCF5C01E194026CD0081E33D /* Category.swift in Sources */,
 				BCCAB420193F7D7D00BFC9AE /* AppInfo.swift in Sources */,
 				BCE623D8193F488100B0B8EF /* Grubby.swift in Sources */,
+				BCF6DE2B1941524300C0EAFB /* PinViewController.m in Sources */,
 				BCF5C027194039240081E33D /* BaseCell.swift in Sources */,
 				BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */,
 				BCF5C020194028ED0081E33D /* Account.swift in Sources */,

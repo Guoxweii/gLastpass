@@ -46,7 +46,7 @@ class Grubby: NSObject {
 		self.dataImportCtr!.fetchDataComplete()
     }
     
-    func parse(passInfo: String) {
+    func parse(passInfo: String!) {
     	AppInfo.sharedInstance.store_password_info(passInfo)
         var elements = passInfo.componentsSeparatedByString("\n")
         

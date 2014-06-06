@@ -10,6 +10,7 @@
                 <outlet property="copyPasswordButton" destination="EFI-Qm-Lhn" id="Hwp-xZ-DCW"/>
                 <outlet property="loginField" destination="dCi-N2-FpO" id="geN-su-602"/>
                 <outlet property="passwordField" destination="U8g-RE-C97" id="0A4-aS-waT"/>
+                <outlet property="resetPinButton" destination="C5q-Id-UUx" id="asB-QF-dbP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -73,5 +74,17 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="407" y="303"/>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C5q-Id-UUx">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="33"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+            <state key="normal" title="重置pin码">
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <connections>
+                <action selector="resetPin:" destination="-1" eventType="touchDown" id="fBB-T1-k6p"/>
+            </connections>
+            <point key="canvasLocation" x="735" y="275.5"/>
+        </button>
     </objects>
 </document>
