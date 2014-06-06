@@ -15,11 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        AppInfo.sharedInstance.store_valid("unvalid")
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
         self.setRootView()
         self.window!.makeKeyAndVisible()
+        
         return true
     }
 
@@ -56,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var baseCtr = UINavigationController(rootViewController: mainCtr)
             self.window!.rootViewController = baseCtr
         } else {
+        
         	Grubby.sharedInstance.parse(AppInfo.sharedInstance.current_password_info()!)
             
         	var listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
