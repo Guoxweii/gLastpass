@@ -1,0 +1,24 @@
+PODS:
+  - APPinViewController (1.0.2)
+  - hpple (0.2.0)
+  - JSONKit (1.5pre)
+  - MBProgressHUD (0.8)
+  - SDWebImage (3.6):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.6)
+
+DEPENDENCIES:
+  - APPinViewController (~> 1.0.2)
+  - hpple (~> 0.2.0)
+  - JSONKit (~> 1.5pre)
+  - MBProgressHUD (~> 0.8)
+  - SDWebImage (~> 3.6)
+
+SPEC CHECKSUMS:
+  APPinViewController: c15366d37316d02383a8eb5e7575b6f193f61691
+  hpple: f4eb7c21a8db83ec264e5d614ec7509e10e5adec
+  JSONKit: efef3bbd3372ff33f96b9c6f34cf4fe18e74ab69
+  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
+  SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
+
+COCOAPODS: 0.33.1

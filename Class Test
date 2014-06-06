@@ -1,0 +1,5 @@
+class Test
+	def initialize 
+		@name = "gxw"
+	end
+end
