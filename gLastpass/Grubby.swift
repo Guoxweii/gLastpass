@@ -65,13 +65,12 @@ class Grubby: NSObject {
             }
             
             var groupName = elementArray[5]
-            
             if groupName.isEmpty {
                 groupName = "未分组"
             }
-            var lineObject : Category? = self.dataSource[groupName]
-        
-            if lineObject == nil {
+            
+            var lineObject : Category? = self.dataSource[groupName]  
+            if !lineObject {
                 lineObject = Category(name: groupName)
                 self.dataSource[groupName] = lineObject
             }

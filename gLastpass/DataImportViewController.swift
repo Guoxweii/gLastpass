@@ -49,8 +49,8 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
     
     func showInfoWithValidUrl() {
         dispatch_async(dispatch_get_main_queue(), {
-            if self.HUD {
-                self.HUD!.removeFromSuperview()
+            if let hud = self.HUD {
+				hud.removeFromSuperview()
                 self.HUD = nil
              }
             
@@ -62,8 +62,8 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
                         sleep(1)
                 	}, completionBlock: {
                         println("animation finish")
-                        if self.HUD {
-                            self.HUD!.removeFromSuperview()
+                        if let hud = self.HUD {
+                            hud.removeFromSuperview()
                             self.HUD = nil
                         }
                 	}
@@ -81,8 +81,8 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
     
     func fetchDataComplete() {
         dispatch_async(dispatch_get_main_queue(), {
-            if self.HUD {
-                self.HUD!.removeFromSuperview()
+            if let hud = self.HUD {
+                hud.removeFromSuperview()
                 self.HUD = nil
             }
         })

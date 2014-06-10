@@ -94,7 +94,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
         let dataSource = Grubby.sharedInstance.dataSource
         
-        var keys = Array<String>()
+        var keys = Array<String!>()
         for (key, category) in dataSource {
             keys.append(key)
         }
@@ -119,10 +119,10 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         
         var passwordUrl = NSURL(string: accounts[indexPath!.row].url)
         var logoUrl: String
-        if passwordUrl.port == nil {
-            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host)/favicon.ico"
+        if let port = passwordUrl.port {
+            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host):\(port)/favicon.ico"
         } else {
-            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host):\(passwordUrl.port)/favicon.ico"
+            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host)/favicon.ico"
         }
         cell.logo.setImageWithURL(NSURL(string: logoUrl), placeholderImage: UIImage(named: "bg"))
         

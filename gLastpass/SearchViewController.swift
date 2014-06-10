@@ -76,10 +76,10 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
         
         var passwordUrl = NSURL(string: account.url)
         var logoUrl: String
-        if passwordUrl.port == nil {
-            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host)/favicon.ico"
+        if let port = passwordUrl.port {
+            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host):\(port)/favicon.ico"
         } else {
-            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host):\(passwordUrl.port)/favicon.ico"
+            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host)/favicon.ico"
         }
         cell.logo.setImageWithURL(NSURL(string: logoUrl), placeholderImage: UIImage(named: "bg"))
         

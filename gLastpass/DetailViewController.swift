@@ -38,8 +38,8 @@ class DetailViewController: UIViewController {
         pboard.string = self.login
         
         dispatch_async(dispatch_get_main_queue(), {
-            if self.HUD {
-                self.HUD!.removeFromSuperview()
+            if let hud = self.HUD {
+                hud.removeFromSuperview()
                 self.HUD = nil
             }
             
@@ -51,8 +51,8 @@ class DetailViewController: UIViewController {
                     sleep(1)
                 }, completionBlock: {
                     println("animation finish")
-                    if self.HUD {
-                        self.HUD!.removeFromSuperview()
+                    if let hud = self.HUD {
+                        hud.removeFromSuperview()
                         self.HUD = nil
                     }
                 }
@@ -65,8 +65,8 @@ class DetailViewController: UIViewController {
         pboard.string = self.password
         
         dispatch_async(dispatch_get_main_queue(), {
-            if self.HUD {
-                self.HUD!.removeFromSuperview()
+            if let hud = self.HUD {
+                hud.removeFromSuperview()
                 self.HUD = nil
             }
             
@@ -78,8 +78,8 @@ class DetailViewController: UIViewController {
                     sleep(1)
                 }, completionBlock: {
                     println("animation finish")
-                    if self.HUD {
-                        self.HUD!.removeFromSuperview()
+                    if let hud = self.HUD {
+                        hud.removeFromSuperview()
                         self.HUD = nil
                     }
                 }

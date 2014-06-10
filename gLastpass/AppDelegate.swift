@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setRootView() {
-        if AppInfo.sharedInstance.current_password_info() == nil {
+        if let pass_info = AppInfo.sharedInstance.current_password_info() {
             var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
             var baseCtr = UINavigationController(rootViewController: mainCtr)
             self.window!.rootViewController = baseCtr
