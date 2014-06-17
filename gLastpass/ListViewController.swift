@@ -30,13 +30,12 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     }
     
     @IBAction func resetDataSource(sender : UIButton) {
-//        var actionSheet = UIActionSheet(title: "", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "重置")
-//        actionSheet.actionSheetStyle = UIActionSheetStyle.Default
-//        actionSheet.showInView(self.view)
-        Grubby.sharedInstance.resetDataSource()
-        
-        var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
-        self.navigationController.setViewControllers([mainCtr],animated: false)
+        var myActionSheet = UIActionSheet()
+        myActionSheet.delegate = self;
+        myActionSheet.addButtonWithTitle("重置")
+        myActionSheet.addButtonWithTitle("取消")
+        myActionSheet.cancelButtonIndex = 1
+        myActionSheet.showInView(self.view)
     }
     
     func actionSheet(actionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int) {
