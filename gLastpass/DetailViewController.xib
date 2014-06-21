@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <objects>
@@ -26,7 +27,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCi-N2-FpO">
-                    <rect key="frame" x="70" y="54" width="230" height="30"/>
+                    <rect key="frame" x="70" y="54" width="390" height="32"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -37,12 +38,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8g-RE-C97">
-                    <rect key="frame" x="70" y="100" width="230" height="30"/>
+                    <rect key="frame" x="70" y="100" width="390" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
-                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuV-24-htw">
-                    <rect key="frame" x="12" y="178" width="296" height="34"/>
+                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuV-24-htw">
+                    <rect key="frame" x="12" y="178" width="456" height="34"/>
                     <state key="normal" title="拷贝帐号">
                         <color key="titleColor" red="0.24327620250000001" green="0.38344403919999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,8 +59,8 @@
                         <action selector="loginCopy:" destination="-1" eventType="touchDown" id="ypd-gY-muM"/>
                     </connections>
                 </button>
-                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFI-Qm-Lhn">
-                    <rect key="frame" x="12" y="228" width="296" height="34"/>
+                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFI-Qm-Lhn">
+                    <rect key="frame" x="12" y="228" width="456" height="34"/>
                     <state key="normal" title="拷贝密码">
                         <color key="titleColor" red="0.24327620250000001" green="0.38344403919999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,6 +71,14 @@
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="RuV-24-htw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="6Vb-sl-4sh"/>
+                <constraint firstItem="EFI-Qm-Lhn" firstAttribute="leading" secondItem="RuV-24-htw" secondAttribute="leading" id="8eS-bq-PLg"/>
+                <constraint firstItem="EFI-Qm-Lhn" firstAttribute="top" secondItem="RuV-24-htw" secondAttribute="bottom" constant="16" id="Egc-ax-Nu8"/>
+                <constraint firstAttribute="trailing" secondItem="RuV-24-htw" secondAttribute="trailing" constant="12" id="Q8M-SH-0MC"/>
+                <constraint firstItem="RuV-24-htw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="178" id="eYW-CH-MlX"/>
+                <constraint firstItem="EFI-Qm-Lhn" firstAttribute="width" secondItem="RuV-24-htw" secondAttribute="width" id="kcM-QT-hQr"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="AbstractSizeClassScreen[default]"/>
