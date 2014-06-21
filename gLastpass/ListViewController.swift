@@ -25,7 +25,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     }
     
     @IBAction func search(sender : UIButton) {
-        
+        self.searchCtr.view.frame = self.navigationController.view.frame
         self.navigationController.view.addSubview(self.searchCtr.view)
     }
     
