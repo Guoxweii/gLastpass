@@ -17,33 +17,35 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="帐号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY4-u7-13G">
-                    <rect key="frame" x="20" y="58" width="42" height="21"/>
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="帐号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY4-u7-13G">
+                    <rect key="frame" x="20" y="58" width="33" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCi-N2-FpO">
-                    <rect key="frame" x="70" y="54" width="390" height="32"/>
+                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCi-N2-FpO">
+                    <rect key="frame" x="81" y="54" width="467" height="32"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rS-uK-zhg">
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rS-uK-zhg">
                     <rect key="frame" x="20" y="104" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8g-RE-C97">
-                    <rect key="frame" x="70" y="100" width="390" height="30"/>
+                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8g-RE-C97">
+                    <rect key="frame" x="82" y="97" width="466" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuV-24-htw">
-                    <rect key="frame" x="12" y="178" width="456" height="34"/>
+                    <rect key="frame" x="12" y="178" width="544" height="34"/>
                     <state key="normal" title="拷贝帐号">
                         <color key="titleColor" red="0.24327620250000001" green="0.38344403919999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,7 +62,7 @@
                     </connections>
                 </button>
                 <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFI-Qm-Lhn">
-                    <rect key="frame" x="12" y="228" width="456" height="34"/>
+                    <rect key="frame" x="12" y="228" width="544" height="34"/>
                     <state key="normal" title="拷贝密码">
                         <color key="titleColor" red="0.24327620250000001" green="0.38344403919999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,14 +77,24 @@
                 <constraint firstItem="RuV-24-htw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="6Vb-sl-4sh"/>
                 <constraint firstItem="EFI-Qm-Lhn" firstAttribute="leading" secondItem="RuV-24-htw" secondAttribute="leading" id="8eS-bq-PLg"/>
                 <constraint firstItem="EFI-Qm-Lhn" firstAttribute="top" secondItem="RuV-24-htw" secondAttribute="bottom" constant="16" id="Egc-ax-Nu8"/>
+                <constraint firstItem="eY4-u7-13G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="58" id="GxN-RE-Vrk"/>
+                <constraint firstItem="eY4-u7-13G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="JsK-s0-1Zn"/>
                 <constraint firstAttribute="trailing" secondItem="RuV-24-htw" secondAttribute="trailing" constant="12" id="Q8M-SH-0MC"/>
+                <constraint firstItem="U8g-RE-C97" firstAttribute="leading" secondItem="dCi-N2-FpO" secondAttribute="leading" id="Tut-6z-NkY"/>
+                <constraint firstItem="eY4-u7-13G" firstAttribute="baseline" secondItem="dCi-N2-FpO" secondAttribute="baseline" id="agW-iq-cE1"/>
                 <constraint firstItem="RuV-24-htw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="178" id="eYW-CH-MlX"/>
+                <constraint firstItem="0rS-uK-zhg" firstAttribute="top" secondItem="eY4-u7-13G" secondAttribute="bottom" constant="25" id="gUC-SF-UbL"/>
+                <constraint firstItem="0rS-uK-zhg" firstAttribute="baseline" secondItem="U8g-RE-C97" secondAttribute="baseline" id="hgM-8W-0S0"/>
+                <constraint firstItem="0rS-uK-zhg" firstAttribute="leading" secondItem="eY4-u7-13G" secondAttribute="leading" id="jJa-Bb-h6X"/>
                 <constraint firstItem="EFI-Qm-Lhn" firstAttribute="width" secondItem="RuV-24-htw" secondAttribute="width" id="kcM-QT-hQr"/>
+                <constraint firstItem="U8g-RE-C97" firstAttribute="width" secondItem="dCi-N2-FpO" secondAttribute="width" id="lf1-ta-EfK"/>
+                <constraint firstItem="dCi-N2-FpO" firstAttribute="leading" secondItem="eY4-u7-13G" secondAttribute="trailing" constant="28" id="oZj-Nn-Io8"/>
+                <constraint firstAttribute="trailing" secondItem="dCi-N2-FpO" secondAttribute="trailing" constant="20" id="yWk-7n-jiz"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="AbstractSizeClassScreen[default]"/>
-            <point key="canvasLocation" x="407" y="303"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="418" y="303"/>
         </view>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C5q-Id-UUx">
             <rect key="frame" x="0.0" y="0.0" width="80" height="33"/>
