@@ -75,6 +75,10 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         return Grubby.sharedInstance.dataSource.count
     }
     
+    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        return 44;
+    }
+    
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
