@@ -12,10 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
+    var pinCtr: PinViewController?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         AppInfo.sharedInstance.store_valid("unvalid")
+        
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
@@ -43,9 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        self.pinCtr?.dismissViewControllerAnimated(false, completion: nil)
+        
         if AppInfo.sharedInstance.current_valid() != "valid" {
-            var pinCtr = PinViewController(nibName: "PinViewController", bundle: nil)
-            self.window!.rootViewController.presentViewController(pinCtr, animated: true, completion: nil)
+            self.pinCtr = PinViewController(nibName: "PinViewController", bundle: nil)
+            self.window!.rootViewController.presentViewController(self.pinCtr, animated: true, completion: nil)
         }
     }
 
