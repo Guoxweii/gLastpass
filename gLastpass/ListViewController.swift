@@ -9,8 +9,8 @@
 import UIKit
 
 class ListViewController: UITableViewController, UIActionSheetDelegate {
-    @IBOutlet var resetButton : UIButton = nil
-    @IBOutlet var searchButton : UIButton = nil
+    @IBOutlet var resetButton : UIButton? = nil
+    @IBOutlet var searchButton : UIButton? = nil
     
     var searchCtr : SearchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)
     
@@ -114,7 +114,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         var category = dataSource[currentKey] as Category
         var accounts = category.accounts
         
-        cell.name.text = accounts[indexPath!.row].name
+        cell.name!.text = accounts[indexPath!.row].name
         
         var passwordUrl = NSURL(string: accounts[indexPath!.row].url)
         var logoUrl: String
@@ -123,7 +123,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         } else {
             logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host)/favicon.ico"
         }
-        cell.logo.setImageWithURL(NSURL(string: logoUrl), placeholderImage: UIImage(named: "bg"))
+        cell.logo!.setImageWithURL(NSURL(string: logoUrl), placeholderImage: UIImage(named: "bg"))
         
     	return cell
     }

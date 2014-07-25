@@ -10,8 +10,8 @@ import UIKit
 
 class BaseCell: UITableViewCell {
 
-    @IBOutlet var name : UILabel = nil
-    @IBOutlet var logo : UIImageView = nil
+    @IBOutlet var name : UILabel? = nil
+    @IBOutlet var logo : UIImageView? = nil
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

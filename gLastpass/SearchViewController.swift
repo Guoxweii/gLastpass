@@ -24,7 +24,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
         // Do any additional setup after loading the view.
         let baseName = "baseCell";
         let nib = UINib(nibName: "BaseCell", bundle: nil)
-		self.searchDisplayController.searchResultsTableView.registerNib(nib, forCellReuseIdentifier: baseName)
+        self.searchDisplayController.searchResultsTableView.registerNib(nib, forCellReuseIdentifier: baseName)
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,7 +72,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
         let cell = tableView!.dequeueReusableCellWithIdentifier(baseName, forIndexPath: indexPath) as BaseCell
         
         var account = self.dataArray[indexPath!.row]
-        cell.name.text = account.name
+        cell.name!.text = account.name
         
         var passwordUrl = NSURL(string: account.url)
         var logoUrl: String
@@ -81,7 +81,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
         } else {
             logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host)/favicon.ico"
         }
-        cell.logo.setImageWithURL(NSURL(string: logoUrl), placeholderImage: UIImage(named: "bg"))
+        cell.logo!.setImageWithURL(NSURL(string: logoUrl), placeholderImage: UIImage(named: "bg"))
         
         return cell
     }

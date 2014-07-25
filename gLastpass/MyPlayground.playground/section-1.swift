@@ -26,5 +26,13 @@ let title = "gxw test"
 block(title)
 
 var array = [23,1,234,456,25]
-var sort_block =
-sort(array, <)
+sort(&array, <)
+
+var url = "http://192.168.37.241/password.html"
+var webUrl = NSURL(string: url)
+var htmlData = NSData(contentsOfURL: webUrl)
+htmlData.length
+
+
+
+

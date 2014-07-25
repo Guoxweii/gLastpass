@@ -9,16 +9,16 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    @IBOutlet var resetPinButton : UIButton = nil
+    @IBOutlet var resetPinButton : UIButton? = nil
     var password: String? = nil
     var login: String? = nil
     var HUD : MBProgressHUD? = nil
     
-    @IBOutlet var passwordField : UITextField = nil
-    @IBOutlet var loginField : UITextField = nil
+    @IBOutlet var passwordField : UITextField? = nil
+    @IBOutlet var loginField : UITextField? = nil
 
-    @IBOutlet var copyLoginButton : UIButton = nil
-    @IBOutlet var copyPasswordButton : UIButton = nil
+    @IBOutlet var copyLoginButton : UIButton? = nil
+    @IBOutlet var copyPasswordButton : UIButton? = nil
     
     @IBAction func resetPin(sender : UIButton) {
         var pinCtr = PinViewController(nibName: "PinViewController", bundle: nil)
@@ -93,13 +93,13 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.edgesForExtendedLayout = UIRectEdge.None
         
-        self.copyLoginButton.layer.cornerRadius = 5
-        self.copyLoginButton.layer.borderWidth = 1
-        self.copyLoginButton.layer.borderColor = UIColor.blueColor().CGColor
+        self.copyLoginButton!.layer.cornerRadius = 5
+        self.copyLoginButton!.layer.borderWidth = 1
+        self.copyLoginButton!.layer.borderColor = UIColor.blueColor().CGColor
         
-        self.copyPasswordButton.layer.cornerRadius = 5
-        self.copyPasswordButton.layer.borderWidth = 1
-        self.copyPasswordButton.layer.borderColor = UIColor.blueColor().CGColor
+        self.copyPasswordButton!.layer.cornerRadius = 5
+        self.copyPasswordButton!.layer.borderWidth = 1
+        self.copyPasswordButton!.layer.borderColor = UIColor.blueColor().CGColor
         
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.resetPinButton)
     }
@@ -110,8 +110,8 @@ class DetailViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-    	self.loginField.text = self.login
-        self.passwordField.text = self.password
+    	self.loginField!.text = self.login?
+        self.passwordField!.text = self.password?
     }
     
     func createHud(title: String) {

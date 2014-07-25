@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         AppInfo.sharedInstance.store_valid("unvalid")
         
-        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
@@ -45,9 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        self.pinCtr?.dismissViewControllerAnimated(false, completion: nil)
         
         if AppInfo.sharedInstance.current_valid() != "valid" {
+            self.pinCtr?.dismissViewControllerAnimated(false, completion: nil)
             self.pinCtr = PinViewController(nibName: "PinViewController", bundle: nil)
             self.window!.rootViewController.presentViewController(self.pinCtr, animated: true, completion: nil)
         }
@@ -59,15 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func setRootView() {
         if let pass_info = AppInfo.sharedInstance.current_password_info() {
-            var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
-            var baseCtr = UINavigationController(rootViewController: mainCtr)
+            Grubby.sharedInstance.parse(pass_info)
+            
+            var listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
+            var baseCtr = UINavigationController(rootViewController: listCtr)
             self.window!.rootViewController = baseCtr
         } else {
-        
-        	Grubby.sharedInstance.parse(AppInfo.sharedInstance.current_password_info()!)
-            
-        	var listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
-            var baseCtr = UINavigationController(rootViewController: listCtr)
+            var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
+            var baseCtr = UINavigationController(rootViewController: mainCtr)
             self.window!.rootViewController = baseCtr
         }
     }

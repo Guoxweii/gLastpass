@@ -41,9 +41,10 @@ class Grubby: NSObject {
             return
         }
         
-        var passInfo : String? = elements[0].text
+        var element = elements[0] as TFHppleElement
+        var passInfo : String? = element.text()
         self.parse(passInfo!)
-		self.dataImportCtr!.fetchDataComplete()
+        self.dataImportCtr!.fetchDataComplete()
     }
     
     func parse(passInfo: String!) {

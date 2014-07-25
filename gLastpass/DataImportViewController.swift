@@ -9,7 +9,7 @@
 import UIKit
 
 class DataImportViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet var urlTextfield : UITextField = nil
+    @IBOutlet var urlTextfield : UITextField? = nil
     var HUD : MBProgressHUD? = nil
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -40,11 +40,11 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
     }
 
     func fetchDataFromUrl() {
-        var url = self.urlTextfield.text
-    	let grubby = Grubby.sharedInstance
+        var url = self.urlTextfield!.text
+        let grubby = Grubby.sharedInstance
         
         grubby.dataImportCtr = self
-        grubby.fetchDataFromUrl("\(url)")
+        grubby.fetchDataFromUrl(url)
     }
     
     func showInfoWithValidUrl() {
