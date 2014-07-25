@@ -35,15 +35,16 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
     func searchBar(searchBar: UISearchBar!, textDidChange searchText: String!) {
         self.dataArray.removeAll()
         
-        var nsSearchText = searchText as NSString
-        var searchTextWithoutSpace = nsSearchText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as String!
+//        var nsSearchText = searchText as NSString
+//        var searchTextWithoutSpace = nsSearchText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as String
         
         let dataSource = Grubby.sharedInstance.dataSource
         for (key, category) in dataSource {
             for account in category.accounts {
-                var urlStr = account.url as NSString
-                var nameStr = account.name as NSString
-                if urlStr.containsString(searchTextWithoutSpace) || nameStr.containsString(searchTextWithoutSpace) {
+                var urlStr = account.url
+                var nameStr = account.name
+                
+                if urlStr.lowercaseString.rangeOfString(searchText) || nameStr.lowercaseString.rangeOfString(searchText) {
                 	self.dataArray.append(account)
                 }
             }
