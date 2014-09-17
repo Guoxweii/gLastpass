@@ -13,9 +13,13 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
     var listCtr : ListViewController? = nil
     var dataArray : Array<Account> = Array<Account>()
 
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -24,7 +28,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
         // Do any additional setup after loading the view.
         let baseName = "baseCell";
         let nib = UINib(nibName: "BaseCell", bundle: nil)
-        self.searchDisplayController.searchResultsTableView.registerNib(nib, forCellReuseIdentifier: baseName)
+        self.searchDisplayController?.searchResultsTableView.registerNib(nib, forCellReuseIdentifier: baseName)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +47,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
                 var urlStr = account.url
                 var nameStr = account.name
                 
-                if urlStr.lowercaseString.rangeOfString(searchTextWithoutSpace) || nameStr.lowercaseString.rangeOfString(searchTextWithoutSpace) {
+                if ((urlStr.lowercaseString.rangeOfString(searchTextWithoutSpace) != nil) || (nameStr.lowercaseString.rangeOfString(searchTextWithoutSpace) != nil )) {
                 	self.dataArray.append(account)
                 }
             }
@@ -69,7 +73,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
     
     func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
         let baseName = "baseCell";
-        let cell = tableView!.dequeueReusableCellWithIdentifier(baseName, forIndexPath: indexPath) as BaseCell
+        let cell = tableView!.dequeueReusableCellWithIdentifier(baseName, forIndexPath: indexPath!) as BaseCell
         
         var account = self.dataArray[indexPath!.row]
         cell.name!.text = account.name

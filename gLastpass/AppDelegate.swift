@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if AppInfo.sharedInstance.current_valid() != "valid" {
             self.pinCtr?.dismissViewControllerAnimated(false, completion: nil)
             self.pinCtr = PinViewController(nibName: "PinViewController", bundle: nil)
-            self.window!.rootViewController.presentViewController(self.pinCtr, animated: true, completion: nil)
+            self.window!.rootViewController?.presentViewController(self.pinCtr!, animated: true, completion: nil)
         }
     }
 

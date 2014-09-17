@@ -12,9 +12,13 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var urlTextfield : UITextField? = nil
     var HUD : MBProgressHUD? = nil
 
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -89,7 +93,7 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
         
         if Grubby.sharedInstance.dataSource.count > 0 {
         	let listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
-            self.navigationController.setViewControllers([listCtr],animated: true)
+            self.navigationController?.setViewControllers([listCtr],animated: true)
         }
     }
 }

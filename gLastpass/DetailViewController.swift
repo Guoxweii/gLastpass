@@ -26,11 +26,15 @@ class DetailViewController: UIViewController {
         self.presentViewController(pinCtr, animated: true, completion: nil)
     }
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
         self.password = "default"
         self.login = "default"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     @IBAction func loginCopy(sender : UIButton) {
@@ -101,7 +105,7 @@ class DetailViewController: UIViewController {
         self.copyPasswordButton!.layer.borderWidth = 1
         self.copyPasswordButton!.layer.borderColor = UIColor.blueColor().CGColor
         
-		self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.resetPinButton)
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.resetPinButton!)
     }
 
     override func didReceiveMemoryWarning() {

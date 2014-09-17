@@ -14,19 +14,23 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     
     var searchCtr : SearchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)
     
-    init(style: UITableViewStyle) {
+    override init(style: UITableViewStyle) {
         super.init(style: style)
         // Custom initialization
     }
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
     }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     @IBAction func search(sender : UIButton) {
-        self.searchCtr.view.frame = self.navigationController.view.frame
-        self.navigationController.view.addSubview(self.searchCtr.view)
+        self.searchCtr.view.frame = self.navigationController?.view.frame as CGRect!
+        self.navigationController?.view.addSubview(self.searchCtr.view)
     }
     
     @IBAction func resetDataSource(sender : UIButton) {
@@ -43,7 +47,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
             Grubby.sharedInstance.resetDataSource()
             
             var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
-            self.navigationController.setViewControllers([mainCtr],animated: false)
+            self.navigationController?.setViewControllers([mainCtr],animated: false)
         }
     }
     
@@ -56,8 +60,8 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         let nib = UINib(nibName: "BaseCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: baseName)
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: self.resetButton)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.searchButton)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: self.resetButton!)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.searchButton!)
         
         self.searchCtr.listCtr = self
     }
@@ -75,7 +79,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         return Grubby.sharedInstance.dataSource.count
     }
     
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 44;
     }
     
@@ -90,11 +94,11 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         }
         var currentKey = keys[section]
         
-		var category = dataSource[currentKey] as Category
+		var category = dataSource[currentKey] as Category!
         return category.accounts.count
     }
     
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let dataSource = Grubby.sharedInstance.dataSource
         
         var keys = Array<String!>()
@@ -104,10 +108,9 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     	return keys[section]
     }
     
-
-    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
+    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
         let baseName = "baseCell";
-    	let cell = self.tableView.dequeueReusableCellWithIdentifier(baseName, forIndexPath: indexPath) as BaseCell
+    	let cell = self.tableView.dequeueReusableCellWithIdentifier(baseName, forIndexPath: indexPath!) as BaseCell
     	
         let dataSource = Grubby.sharedInstance.dataSource
         var keys = Array<String>()
@@ -115,7 +118,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
             keys.append(key)
         }
         var currentKey = keys[indexPath!.section]
-        var category = dataSource[currentKey] as Category
+        var category = dataSource[currentKey] as Category!
         var accounts = category.accounts
         
         cell.name!.text = accounts[indexPath!.row].name
@@ -132,21 +135,21 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     	return cell
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         let dataSource = Grubby.sharedInstance.dataSource
         var keys = Array<String>()
         for (key, category) in dataSource {
             keys.append(key)
         }
         var currentKey = keys[indexPath!.section]
-        var category = dataSource[currentKey] as Category
+        var category = dataSource[currentKey] as Category!
         var accounts = category.accounts
         
         var detailCtr = DetailViewController(nibName: "DetailViewController", bundle: nil)
         detailCtr.title = accounts[indexPath!.row].name
         detailCtr.login = accounts[indexPath!.row].login
         detailCtr.password = accounts[indexPath!.row].password
-        self.navigationController.pushViewController(detailCtr, animated: true)
+        self.navigationController?.pushViewController(detailCtr, animated: true)
     }
     
     func cancelSearch() {
@@ -158,6 +161,6 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         detailCtr.title = account.name
         detailCtr.login = account.login
         detailCtr.password = account.password
-        self.navigationController.pushViewController(detailCtr, animated: true)
+        self.navigationController?.pushViewController(detailCtr, animated: true)
     }
 }

@@ -71,7 +71,7 @@ class Grubby: NSObject {
             }
             
             var lineObject : Category? = self.dataSource[groupName]  
-            if !lineObject {
+            if (lineObject == nil) {
                 lineObject = Category(name: groupName)
                 self.dataSource[groupName] = lineObject
             }
