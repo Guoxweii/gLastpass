@@ -46,8 +46,8 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         if buttonIndex == 0 {
             Grubby.sharedInstance.resetDataSource()
             
-            var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
-            self.navigationController?.setViewControllers([mainCtr],animated: false)
+            var portalCtr = PortalViewController(nibName: "PortalViewController", bundle: nil)
+            self.navigationController?.setViewControllers([portalCtr], animated: false)
         }
     }
     

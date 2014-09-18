@@ -5,7 +5,8 @@ pod 'hpple', '~> 0.2.0'
 pod 'MBProgressHUD', '~> 0.8'
 pod 'SDWebImage', '~> 3.6'
 pod 'APPinViewController', '~> 1.0.2'
+pod 'CocoaHTTPServer', '~> 2.3'
 
-# target :gLastpassTests, :exclusive => true do  
+# target :gLastpassTests, :exclusive => true do
 #    pod 'Kiwi/XCTest'
-# end 
+# end

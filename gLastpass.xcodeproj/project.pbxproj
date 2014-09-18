@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9986B1CCCFC3479CB80E02C3 /* libPods-gLastpassTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C85BE47E19C6428EBE131AF9 /* libPods-gLastpassTests.a */; };
+		BC5A0B3019CB032E00249371 /* WebAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5A0B2F19CB032E00249371 /* WebAdapter.swift */; };
+		BC5A0B3B19CB15A500249371 /* Web in Resources */ = {isa = PBXBuildFile; fileRef = BC5A0B3A19CB15A500249371 /* Web */; };
+		BC5A0B3F19CB1B6600249371 /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5A0B3D19CB1B6600249371 /* PortalViewController.swift */; };
+		BC5A0B4019CB1B6600249371 /* PortalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5A0B3E19CB1B6600249371 /* PortalViewController.xib */; };
+		BC5A0B4319CB2AA800249371 /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5A0B4219CB2AA800249371 /* NetWork.m */; };
 		BC720D51194089D3003B7AB9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC720D4F194089D3003B7AB9 /* DetailViewController.swift */; };
 		BC720D52194089D3003B7AB9 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC720D50194089D3003B7AB9 /* DetailViewController.xib */; };
 		BCCAB420193F7D7D00BFC9AE /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCAB41F193F7D7D00BFC9AE /* AppInfo.swift */; };
@@ -46,6 +51,12 @@
 /* Begin PBXFileReference section */
 		0B8844A0222F43D88025F9B3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E8B202B72C24A3D9CBF41AD /* Pods-gLastpassTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gLastpassTests.xcconfig"; path = "Pods/Pods-gLastpassTests.xcconfig"; sourceTree = "<group>"; };
+		BC5A0B2F19CB032E00249371 /* WebAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAdapter.swift; sourceTree = "<group>"; };
+		BC5A0B3A19CB15A500249371 /* Web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Web; sourceTree = "<group>"; };
+		BC5A0B3D19CB1B6600249371 /* PortalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalViewController.swift; sourceTree = "<group>"; };
+		BC5A0B3E19CB1B6600249371 /* PortalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortalViewController.xib; sourceTree = "<group>"; };
+		BC5A0B4119CB2AA800249371 /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
+		BC5A0B4219CB2AA800249371 /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
 		BC720D4F194089D3003B7AB9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BC720D50194089D3003B7AB9 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		BCCAB41F193F7D7D00BFC9AE /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
@@ -173,6 +184,8 @@
 				BCF6DE281941524300C0EAFB /* PinViewController.h */,
 				BCF6DE291941524300C0EAFB /* PinViewController.m */,
 				BCF6DE2A1941524300C0EAFB /* PinViewController.xib */,
+				BC5A0B3D19CB1B6600249371 /* PortalViewController.swift */,
+				BC5A0B3E19CB1B6600249371 /* PortalViewController.xib */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -195,6 +208,9 @@
 				BCCAB41F193F7D7D00BFC9AE /* AppInfo.swift */,
 				BCF5C01D194026CD0081E33D /* Category.swift */,
 				BCF5C01F194028ED0081E33D /* Account.swift */,
+				BC5A0B2F19CB032E00249371 /* WebAdapter.swift */,
+				BC5A0B4119CB2AA800249371 /* NetWork.h */,
+				BC5A0B4219CB2AA800249371 /* NetWork.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -202,6 +218,7 @@
 		BCF26FD1193EF9410087C47C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				BC5A0B3A19CB15A500249371 /* Web */,
 				BCF6DE221940B51400C0EAFB /* search@2x.png */,
 				BCF5C02919403C140081E33D /* bg@2x.png */,
 				BCF26FD2193EF9970087C47C /* lastpass.png */,
@@ -308,8 +325,10 @@
 				BCF26FD3193EF9970087C47C /* lastpass.png in Resources */,
 				BC720D52194089D3003B7AB9 /* DetailViewController.xib in Resources */,
 				BCF5C028194039240081E33D /* BaseCell.xib in Resources */,
+				BC5A0B4019CB1B6600249371 /* PortalViewController.xib in Resources */,
 				BCF5C02A19403C140081E33D /* bg@2x.png in Resources */,
 				BCF5C024194037AA0081E33D /* ListViewController.xib in Resources */,
+				BC5A0B3B19CB15A500249371 /* Web in Resources */,
 				BCF6DE211940AFAB00C0EAFB /* SearchViewController.xib in Resources */,
 				BCF26FD0193EF5EC0087C47C /* DataImportViewController.xib in Resources */,
 			);
@@ -394,10 +413,13 @@
 			files = (
 				BCF6DE201940AFAB00C0EAFB /* SearchViewController.swift in Sources */,
 				BC720D51194089D3003B7AB9 /* DetailViewController.swift in Sources */,
+				BC5A0B3019CB032E00249371 /* WebAdapter.swift in Sources */,
 				BCDA97AE193EB96A004186E9 /* AppDelegate.swift in Sources */,
+				BC5A0B3F19CB1B6600249371 /* PortalViewController.swift in Sources */,
 				BCF5C01E194026CD0081E33D /* Category.swift in Sources */,
 				BCCAB420193F7D7D00BFC9AE /* AppInfo.swift in Sources */,
 				BCE623D8193F488100B0B8EF /* Grubby.swift in Sources */,
+				BC5A0B4319CB2AA800249371 /* NetWork.m in Sources */,
 				BCF6DE2B1941524300C0EAFB /* PinViewController.m in Sources */,
 				BCF5C027194039240081E33D /* BaseCell.swift in Sources */,
 				BCF26FCF193EF5EC0087C47C /* DataImportViewController.swift in Sources */,
