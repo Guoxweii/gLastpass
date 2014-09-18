@@ -9,9 +9,6 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,18 +25,19 @@
     <div class="container">
       <div class="row content">
         <div class="col-xs-offset-3 col-xs-6">
-          <ol>
-            <li>
-              Export the backup file from lastpass
-            </li>
-            <li>
-              Upload your backup file by the form
-            </li>
-            <li>
-              Done!
-            </li>
-          </ol>
           <div class="well">
+            <ol>
+              <li>
+                <strong>Export the backup file from lastpass</strong>
+              </li>
+              <li>
+                <strong>Upload your backup file by the form</strong>
+              </li>
+              <li>
+                <strong>Done!</strong>
+              </li>
+            </ol>
+            <br />
             <form accept-charset="UTF-8" action="/post" class="simple_form form-horizontal" enctype="multipart/form-data" method="post">
               <div class="form-group">
                 <div class="col-xs-8">
@@ -53,8 +51,8 @@
                     </span>
                   </div>
                 </div>
+                <div class="col-xs-4"><button type="submit" class="btn btn-primary">文件上传</button></div>
               </div>
-              <button type="submit" class="btn btn-primary">文件上传</button>
             </form>
           </div>
         </div>
