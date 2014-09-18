@@ -120,35 +120,55 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         var currentKey = keys[indexPath!.section]
         var category = dataSource[currentKey] as Category!
         var accounts = category.accounts
-        
+
         cell.name!.text = accounts[indexPath!.row].name
-        
+
         var passwordUrl = NSURL(string: accounts[indexPath!.row].url)
         var logoUrl: String
-        if let port = passwordUrl.port {
-            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host):\(port)/favicon.ico"
-        } else {
-            logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host)/favicon.ico"
-        }
+        logoUrl = fetchIcoUrl(passwordUrl)
+
         cell.logo!.setImageWithURL(NSURL(string: logoUrl), placeholderImage: UIImage(named: "bg"))
         
     	return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    func fetchIcoUrl(url: NSURL) -> String {
+        var icoUrl = ""
+        
+        if let scheme = url.scheme {
+        	icoUrl += scheme
+            icoUrl += "://"
+        }
+        
+        if let host = url.host {
+            icoUrl += host
+        }
+        
+        if let port = url.port {
+            icoUrl += ":"
+            let portString = "\(port)"
+        	icoUrl += portString
+        }
+        
+        icoUrl += "/favicon.ico"
+        
+        return icoUrl
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let dataSource = Grubby.sharedInstance.dataSource
         var keys = Array<String>()
         for (key, category) in dataSource {
             keys.append(key)
         }
-        var currentKey = keys[indexPath!.section]
+        var currentKey = keys[indexPath.section]
         var category = dataSource[currentKey] as Category!
         var accounts = category.accounts
         
         var detailCtr = DetailViewController(nibName: "DetailViewController", bundle: nil)
-        detailCtr.title = accounts[indexPath!.row].name
-        detailCtr.login = accounts[indexPath!.row].login
-        detailCtr.password = accounts[indexPath!.row].password
+        detailCtr.title = accounts[indexPath.row].name
+        detailCtr.login = accounts[indexPath.row].login
+        detailCtr.password = accounts[indexPath.row].password
         self.navigationController?.pushViewController(detailCtr, animated: true)
     }
     
