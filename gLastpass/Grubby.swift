@@ -10,7 +10,7 @@
 
 class Grubby: NSObject {
     
-    var dataSource: Dictionary<String, Category> = Dictionary<String, Category>()
+    var dataSource: Dictionary<String, Group> = Dictionary<String, Group>()
     var dataImportCtr : DataImportViewController? = nil
     
     class var sharedInstance:Grubby {
@@ -70,9 +70,9 @@ class Grubby: NSObject {
                 groupName = "未分组"
             }
             
-            var lineObject : Category? = self.dataSource[groupName]  
+            var lineObject : Group? = self.dataSource[groupName]
             if (lineObject == nil) {
-                lineObject = Category(name: groupName)
+                lineObject = Group(name: groupName)
                 self.dataSource[groupName] = lineObject
             }
         
@@ -83,6 +83,6 @@ class Grubby: NSObject {
     
     func resetDataSource() {
         AppInfo.sharedInstance.store_password_info(nil)
-        self.dataSource = Dictionary<String, Category>()
+        self.dataSource = Dictionary<String, Group>()
     }
 }

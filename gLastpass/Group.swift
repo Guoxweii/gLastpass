@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 bstar. All rights reserved.
 //
 
-class Category: NSObject {
+class Group: NSObject {
     var name: String
     var accounts: Array<Account>
     

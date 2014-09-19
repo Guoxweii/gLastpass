@@ -11,9 +11,9 @@ class Account: NSObject {
     var url: String
     var login: String
     var password: String
-    var category: Category
+    var category: Group
     
-    init(name: String, url: String, login: String, password: String, category: Category) {
+    init(name: String, url: String, login: String, password: String, category: Group) {
         self.name = name
         self.url = url
         self.login = login
