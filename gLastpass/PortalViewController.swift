@@ -11,6 +11,8 @@ import UIKit
 class PortalViewController: UIViewController {
     @IBOutlet weak var urlWrapper: UIView!
     @IBOutlet weak var urlLabel: UILabel!
+    
+    var HUD : MBProgressHUD? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +25,8 @@ class PortalViewController: UIViewController {
         urlWrapper.layer.borderWidth = 0.1
         urlWrapper.layer.borderColor = urlWrapper.backgroundColor?.CGColor
         
-        
-        WebAdapter.starServer()
+        WebAdapter.sharedInstance.portalCtr = self
+        WebAdapter.sharedInstance.starServer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,16 +37,24 @@ class PortalViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        WebAdapter.starServer()
+        WebAdapter.sharedInstance.starServer()
         var urlStr: String!
-        urlStr = "http://" + NetWork.currentIpAddress() + ":\(WebAdapter.sharedInstance.listeningPort())"
+        urlStr = "http://" + NetWork.currentIpAddress() + ":\(WebAdapter.sharedInstance.httpServer.listeningPort())"
         urlLabel.text = urlStr
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        WebAdapter.stopServer()
+        WebAdapter.sharedInstance.stopServer()
+    }
+    
+    func createHud(title: String) {
+        self.HUD = MBProgressHUD(view: self.view)
+        self.view.addSubview(self.HUD!)
+        self.HUD!.dimBackground = true;
+        self.HUD!.labelText = title
+        self.HUD!.yOffset = -120.0
     }
     
 

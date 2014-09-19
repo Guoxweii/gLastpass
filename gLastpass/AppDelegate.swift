@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setRootView() {
-        WebAdapter.configuration()
+        WebAdapter.sharedInstance.configuration()
         
         if let pass_info = AppInfo.sharedInstance.current_password_info() {
             Grubby.sharedInstance.parse(pass_info)

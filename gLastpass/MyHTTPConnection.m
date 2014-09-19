@@ -10,6 +10,8 @@
 #import "HTTPDynamicFileResponse.h"
 #import "HTTPFileResponse.h"
 
+//#import "gLastpass-Swift.h"
+
 // Log levels : off, error, warn, info, verbose
 // Other flags: trace
 static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE;
@@ -45,6 +47,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 	// Inform HTTP server that we expect a body to accompany a POST request
 	
 	if([method isEqualToString:@"POST"] && [path isEqualToString:@"/upload.html"]) {
+//        WebAdapter.portalCtr.createHud(@"uploading....")
         // here we need to make sure, boundary is set in header
         NSString* contentType = [request headerField:@"Content-Type"];
         NSUInteger paramsSeparator = [contentType rangeOfString:@";"].location;
