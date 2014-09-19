@@ -22,7 +22,9 @@ class PortalViewController: UIViewController {
         urlWrapper.layer.cornerRadius = 5
         urlWrapper.layer.borderWidth = 0.1
         urlWrapper.layer.borderColor = urlWrapper.backgroundColor?.CGColor
-        // Do any additional setup after loading the view.
+        
+        
+        WebAdapter.starServer()
     }
 
     override func didReceiveMemoryWarning() {

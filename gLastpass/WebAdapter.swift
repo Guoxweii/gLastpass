@@ -25,13 +25,14 @@ class WebAdapter: NSObject {
     
     class func configuration() {
         DDLog.addLogger(DDTTYLogger.sharedInstance())
+        var httpServer = WebAdapter.sharedInstance
         
-        sharedInstance.setType("_http._tcp.")
+        httpServer.setType("_http._tcp.")
+        var docRoot: String?
+        docRoot = NSBundle.mainBundle().pathForResource("index", ofType: "html", inDirectory: "Web")?.stringByDeletingLastPathComponent
         
-        var webPath: String
-        webPath = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("Web")
-        sharedInstance.setDocumentRoot(webPath)
-        println("the web path is \(webPath)")
+        httpServer.setDocumentRoot(docRoot)
+        httpServer.setConnectionClass(MyHTTPConnection)
     }
     
     class func starServer() {
