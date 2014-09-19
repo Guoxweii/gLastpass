@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>upload lastpass</title>
+
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/input-file.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .content {
+      margin-top: 100px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row content">
+        <div class="col-xs-offset-3 col-xs-6">
+          <div class="well">
+            <ol>
+              <li>
+                <strong>Export the backup file from lastpass</strong>
+              </li>
+              <li>
+                <strong>Upload your backup file by the form</strong>
+              </li>
+              <li>
+                <strong>Done!</strong>
+              </li>
+            </ol>
+            <br />
+
+            <form action="upload.html" method="post" enctype="multipart/form-data" accept-charset="utf-8" class="simple_form form-horizontal">
+              <div class="form-group">
+                <div class="col-xs-6">
+                  <input type="file" name="upload1" class="filestyle" data-icon="false" data-buttonText="浏览">
+                </div>
+                <div class="col-xs-6"><button type="submit" class="btn btn-primary">文件上传</button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

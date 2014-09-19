@@ -46,8 +46,8 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         if buttonIndex == 0 {
             Grubby.sharedInstance.resetDataSource()
             
-            var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
-            self.navigationController?.setViewControllers([mainCtr],animated: false)
+            var portalCtr = PortalViewController(nibName: "PortalViewController", bundle: nil)
+            self.navigationController?.setViewControllers([portalCtr], animated: false)
         }
     }
     
@@ -94,7 +94,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         }
         var currentKey = keys[section]
         
-		var category = dataSource[currentKey] as Category!
+		var category = dataSource[currentKey] as Group!
         return category.accounts.count
     }
     
@@ -118,7 +118,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
             keys.append(key)
         }
         var currentKey = keys[indexPath!.section]
-        var category = dataSource[currentKey] as Category!
+        var category = dataSource[currentKey] as Group!
         var accounts = category.accounts
 
         cell.name!.text = accounts[indexPath!.row].name
@@ -162,7 +162,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
             keys.append(key)
         }
         var currentKey = keys[indexPath.section]
-        var category = dataSource[currentKey] as Category!
+        var category = dataSource[currentKey] as Group!
         var accounts = category.accounts
         
         var detailCtr = DetailViewController(nibName: "DetailViewController", bundle: nil)

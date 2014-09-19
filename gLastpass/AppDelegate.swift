@@ -57,6 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setRootView() {
+        WebAdapter.sharedInstance.configuration()
+        
         if let pass_info = AppInfo.sharedInstance.current_password_info() {
             Grubby.sharedInstance.parse(pass_info)
             
@@ -64,8 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var baseCtr = UINavigationController(rootViewController: listCtr)
             self.window!.rootViewController = baseCtr
         } else {
-            var mainCtr = DataImportViewController(nibName: "DataImportViewController", bundle: nil)
-            var baseCtr = UINavigationController(rootViewController: mainCtr)
+            var portalCtr = PortalViewController(nibName: "PortalViewController", bundle: nil)
+            var baseCtr = UINavigationController(rootViewController: portalCtr)
             self.window!.rootViewController = baseCtr
         }
     }

@@ -10,8 +10,8 @@
 
 class Grubby: NSObject {
     
-    var dataSource: Dictionary<String, Category> = Dictionary<String, Category>()
-    var dataImportCtr : DataImportViewController? = nil
+    var dataSource: Dictionary<String, Group> = Dictionary<String, Group>()
+    var portalCtr : PortalViewController? = nil
     
     class var sharedInstance:Grubby {
         get {
@@ -26,25 +26,24 @@ class Grubby: NSObject {
     	}
     }
 
-    func fetchDataFromUrl(url: String) {
-        var webUrl = NSURL(string: url)
-        var htmlData = NSData(contentsOfURL: webUrl)
+    func fetchDataFromPath(path: String) {
+        var htmlData = NSData.dataWithContentsOfFile(path, options: nil, error: nil)
         if htmlData.length <= 0 {
-        	self.dataImportCtr!.showInfoWithValidUrl()
+        	self.portalCtr!.showInfoWithErrorData()
             return
         }
         
         var doc = TFHpple(HTMLData: htmlData)
         var elements : Array = doc.searchWithXPathQuery("//pre")
         if elements.count == 0 {
-            self.dataImportCtr!.showInfoWithValidUrl()
+            self.portalCtr!.showInfoWithErrorData()
             return
         }
         
         var element = elements[0] as TFHppleElement
         var passInfo : String? = element.text()
         self.parse(passInfo!)
-        self.dataImportCtr!.fetchDataComplete()
+        self.portalCtr!.fetchDataComplete()
     }
     
     func parse(passInfo: String!) {
@@ -70,9 +69,9 @@ class Grubby: NSObject {
                 groupName = "未分组"
             }
             
-            var lineObject : Category? = self.dataSource[groupName]  
+            var lineObject : Group? = self.dataSource[groupName]
             if (lineObject == nil) {
-                lineObject = Category(name: groupName)
+                lineObject = Group(name: groupName)
                 self.dataSource[groupName] = lineObject
             }
         
@@ -83,6 +82,6 @@ class Grubby: NSObject {
     
     func resetDataSource() {
         AppInfo.sharedInstance.store_password_info(nil)
-        self.dataSource = Dictionary<String, Category>()
+        self.dataSource = Dictionary<String, Group>()
     }
 }
