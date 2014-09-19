@@ -25,6 +25,8 @@ class PortalViewController: UIViewController {
         urlWrapper.layer.borderWidth = 0.1
         urlWrapper.layer.borderColor = urlWrapper.backgroundColor?.CGColor
         
+        self.createHud()
+        
         WebAdapter.sharedInstance.portalCtr = self
         WebAdapter.sharedInstance.starServer()
         Grubby.sharedInstance.portalCtr = self
@@ -52,45 +54,35 @@ class PortalViewController: UIViewController {
     
     func showHub(title: String) {
         dispatch_async(dispatch_get_main_queue(), {
-            if let hud = self.HUD {
-                hud.removeFromSuperview()
-                self.HUD = nil
-            }
-
-            self.createHud(title)
+            self.HUD!.labelText = title
             self.HUD!.show(true)
         })
     }
     
-    func createHud(title: String) {
+    func createHud() {
         self.HUD = MBProgressHUD(view: self.view)
         self.view.addSubview(self.HUD!)
         self.HUD!.dimBackground = true;
-        self.HUD!.labelText = title
         self.HUD!.yOffset = -120.0
     }
     
     func showInfoWithErrorData() {
         dispatch_async(dispatch_get_main_queue(), {
-            if let hud = self.HUD {
-                hud.removeFromSuperview()
-                self.HUD = nil
-            }
+            self.HUD!.labelText = "数据错误."
+            self.HUD!.hide(true, afterDelay: 5)
         })
     }
     
     func fetchDataComplete() {
         dispatch_async(dispatch_get_main_queue(), {
-            if let hud = self.HUD {
-                hud.removeFromSuperview()
-                self.HUD = nil
+            self.HUD!.labelText = "导入成功，3秒后跳转"
+
+            if Grubby.sharedInstance.dataSource.count > 0 {
+                let listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
+                self.navigationController?.setViewControllers([listCtr],animated: true)
             }
         })
         
-        if Grubby.sharedInstance.dataSource.count > 0 {
-            let listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
-            self.navigationController?.setViewControllers([listCtr],animated: true)
-        }
     }
     
 
