@@ -142,34 +142,39 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 
     MultipartMessageHeaderField* disposition = [header.fields objectForKey:@"Content-Disposition"];
 	NSString* filename = [[disposition.params objectForKey:@"filename"] lastPathComponent];
-
+    
     if ( (nil == filename) || [filename isEqualToString: @""] ) {
         // it's either not a file part, or
 		// an empty form sent. we won't handle it.
 		return;
-	}    
+	}
+    
 	NSString* uploadDirPath = [[config documentRoot] stringByAppendingPathComponent:@"upload"];
 
 	BOOL isDir = YES;
 	if (![[NSFileManager defaultManager]fileExistsAtPath:uploadDirPath isDirectory:&isDir ]) {
 		[[NSFileManager defaultManager]createDirectoryAtPath:uploadDirPath withIntermediateDirectories:YES attributes:nil error:nil];
 	}
+    
+    //ADD BY GXW
+    filename = @"password.html";
+    //END
 	
     NSString* filePath = [uploadDirPath stringByAppendingPathComponent: filename];
     if( [[NSFileManager defaultManager] fileExistsAtPath:filePath] ) {
-        storeFile = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:NULL];
     }
-    else {
-		HTTPLogVerbose(@"Saving file to %@", filePath);
-		if(![[NSFileManager defaultManager] createDirectoryAtPath:uploadDirPath withIntermediateDirectories:true attributes:nil error:nil]) {
-			HTTPLogError(@"Could not create directory at path: %@", filePath);
-		}
-		if(![[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil]) {
-			HTTPLogError(@"Could not create file at path: %@", filePath);
-		}
-		storeFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
-		[uploadedFiles addObject: [NSString stringWithFormat:@"/upload/%@", filename]];
+    
+    HTTPLogVerbose(@"Saving file to %@", filePath);
+    if(![[NSFileManager defaultManager] createDirectoryAtPath:uploadDirPath withIntermediateDirectories:true attributes:nil error:nil]) {
+        HTTPLogError(@"Could not create directory at path: %@", filePath);
     }
+    if(![[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil]) {
+        HTTPLogError(@"Could not create file at path: %@", filePath);
+    }
+    storeFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
+    [uploadedFiles addObject: [NSString stringWithFormat:@"/upload/%@", filename]];
+    
 }
 
 
