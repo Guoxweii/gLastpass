@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>upload lastpass</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/input-file.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,22 +41,16 @@
               </li>
             </ol>
             <br />
+
             <form accept-charset="UTF-8" action="/post" class="simple_form form-horizontal" enctype="multipart/form-data" method="post">
               <div class="form-group">
-                <div class="col-xs-8">
-                  <input class="filestyle" data-buttontext="浏览..." id="organization_logo" name="organization[logo]" type="file" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
-                  <div class="bootstrap-filestyle input-group">
-                    <input type="text" class="form-control " disabled="">
-                    <span class="group-span-filestyle input-group-btn" tabindex="0">
-                      <label for="organization_logo" class="btn btn-default ">
-                        <span class="glyphicon glyphicon-folder-open"></span> 浏览...
-                      </label>
-                    </span>
-                  </div>
+                <div class="col-xs-6">
+                  <input type="file" class="filestyle" data-icon="false" data-buttonText="浏览">
                 </div>
-                <div class="col-xs-4"><button type="submit" class="btn btn-primary">文件上传</button></div>
+                <div class="col-xs-6"><button type="submit" class="btn btn-primary">文件上传</button></div>
               </div>
             </form>
+
           </div>
         </div>
       </div>
