@@ -152,8 +152,13 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 		return;
 	}
     
-	NSString* uploadDirPath = [[config documentRoot] stringByAppendingPathComponent:@"upload"];
+//	NSString* uploadDirPath = [[config documentRoot] stringByAppendingPathComponent:@"upload"];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents folder
+    NSString *uploadDirPath = [documentsDirectory stringByAppendingPathComponent:@"upload"];
 
+    
+    
 	BOOL isDir = YES;
 	if (![[NSFileManager defaultManager]fileExistsAtPath:uploadDirPath isDirectory:&isDir ]) {
 		[[NSFileManager defaultManager]createDirectoryAtPath:uploadDirPath withIntermediateDirectories:YES attributes:nil error:nil];
@@ -190,8 +195,10 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
         
         //add by gxw
         [[WebAdapter sharedInstance].portalCtr showHub:@"数据解析中...."];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents folder
+        NSString *path = [documentsDirectory stringByAppendingPathComponent:@"upload/password.html"];
         
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"password" ofType:@"html" inDirectory:@"Web/upload"];
         [[Grubby sharedInstance] fetchDataFromPath:path];
         //end
 	}

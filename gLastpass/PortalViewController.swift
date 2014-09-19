@@ -52,6 +52,11 @@ class PortalViewController: UIViewController {
     
     func showHub(title: String) {
         dispatch_async(dispatch_get_main_queue(), {
+            if let hud = self.HUD {
+                hud.removeFromSuperview()
+                self.HUD = nil
+            }
+
             self.createHud(title)
             self.HUD!.show(true)
         })
@@ -71,21 +76,6 @@ class PortalViewController: UIViewController {
                 hud.removeFromSuperview()
                 self.HUD = nil
             }
-            
-            self.createHud("数据错误.")
-            
-            self.HUD!.showAnimated(true,
-                whileExecutingBlock: {
-                    println("start animation")
-                    sleep(1)
-                }, completionBlock: {
-                    println("animation finish")
-                    if let hud = self.HUD {
-                        hud.removeFromSuperview()
-                        self.HUD = nil
-                    }
-                }
-            )
         })
     }
     
