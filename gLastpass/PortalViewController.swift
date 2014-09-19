@@ -27,6 +27,7 @@ class PortalViewController: UIViewController {
         
         WebAdapter.sharedInstance.portalCtr = self
         WebAdapter.sharedInstance.starServer()
+        Grubby.sharedInstance.portalCtr = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,12 +50,57 @@ class PortalViewController: UIViewController {
         WebAdapter.sharedInstance.stopServer()
     }
     
+    func showHub(title: String) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.createHud(title)
+            self.HUD!.show(true)
+        })
+    }
+    
     func createHud(title: String) {
         self.HUD = MBProgressHUD(view: self.view)
         self.view.addSubview(self.HUD!)
         self.HUD!.dimBackground = true;
         self.HUD!.labelText = title
         self.HUD!.yOffset = -120.0
+    }
+    
+    func showInfoWithErrorData() {
+        dispatch_async(dispatch_get_main_queue(), {
+            if let hud = self.HUD {
+                hud.removeFromSuperview()
+                self.HUD = nil
+            }
+            
+            self.createHud("数据错误.")
+            
+            self.HUD!.showAnimated(true,
+                whileExecutingBlock: {
+                    println("start animation")
+                    sleep(1)
+                }, completionBlock: {
+                    println("animation finish")
+                    if let hud = self.HUD {
+                        hud.removeFromSuperview()
+                        self.HUD = nil
+                    }
+                }
+            )
+        })
+    }
+    
+    func fetchDataComplete() {
+        dispatch_async(dispatch_get_main_queue(), {
+            if let hud = self.HUD {
+                hud.removeFromSuperview()
+                self.HUD = nil
+            }
+        })
+        
+        if Grubby.sharedInstance.dataSource.count > 0 {
+            let listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
+            self.navigationController?.setViewControllers([listCtr],animated: true)
+        }
     }
     
 

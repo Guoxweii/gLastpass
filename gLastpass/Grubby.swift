@@ -11,7 +11,7 @@
 class Grubby: NSObject {
     
     var dataSource: Dictionary<String, Group> = Dictionary<String, Group>()
-    var dataImportCtr : DataImportViewController? = nil
+    var portalCtr : PortalViewController? = nil
     
     class var sharedInstance:Grubby {
         get {
@@ -26,25 +26,24 @@ class Grubby: NSObject {
     	}
     }
 
-    func fetchDataFromUrl(url: String) {
-        var webUrl = NSURL(string: url)
-        var htmlData = NSData(contentsOfURL: webUrl)
+    func fetchDataFromPath(path: String) {
+        var htmlData = NSData.dataWithContentsOfFile(path, options: nil, error: nil)
         if htmlData.length <= 0 {
-        	self.dataImportCtr!.showInfoWithValidUrl()
+        	self.portalCtr!.showInfoWithErrorData()
             return
         }
         
         var doc = TFHpple(HTMLData: htmlData)
         var elements : Array = doc.searchWithXPathQuery("//pre")
         if elements.count == 0 {
-            self.dataImportCtr!.showInfoWithValidUrl()
+            self.portalCtr!.showInfoWithErrorData()
             return
         }
         
         var element = elements[0] as TFHppleElement
         var passInfo : String? = element.text()
         self.parse(passInfo!)
-        self.dataImportCtr!.fetchDataComplete()
+        self.portalCtr!.fetchDataComplete()
     }
     
     func parse(passInfo: String!) {

@@ -10,7 +10,7 @@
 #import "HTTPDynamicFileResponse.h"
 #import "HTTPFileResponse.h"
 
-//#import "gLastpass-Swift.h"
+#import "gLastpass-Swift.h"
 
 // Log levels : off, error, warn, info, verbose
 // Other flags: trace
@@ -47,7 +47,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 	// Inform HTTP server that we expect a body to accompany a POST request
 	
 	if([method isEqualToString:@"POST"] && [path isEqualToString:@"/upload.html"]) {
-//        WebAdapter.portalCtr.createHud(@"uploading....")
+        [[WebAdapter sharedInstance].portalCtr showHub:@"数据接受中...."];
         // here we need to make sure, boundary is set in header
         NSString* contentType = [request headerField:@"Content-Type"];
         NSUInteger paramsSeparator = [contentType rangeOfString:@";"].location;
@@ -175,6 +175,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
     if(![[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil]) {
         HTTPLogError(@"Could not create file at path: %@", filePath);
     }
+    
     storeFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
     [uploadedFiles addObject: [NSString stringWithFormat:@"/upload/%@", filename]];
     
@@ -186,6 +187,13 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 	// here we just write the output from parser to the file.
 	if( storeFile ) {
 		[storeFile writeData:data];
+        
+        //add by gxw
+        [[WebAdapter sharedInstance].portalCtr showHub:@"数据解析中...."];
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"password" ofType:@"html" inDirectory:@"Web/upload"];
+        [[Grubby sharedInstance] fetchDataFromPath:path];
+        //end
 	}
 }
 
