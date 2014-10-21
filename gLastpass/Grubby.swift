@@ -20,14 +20,14 @@ class Grubby: NSObject {
                 static var token : dispatch_once_t = 0
             }
             
-            dispatch_once(&Static.token) { Static.instance = Grubby() }
+            dispatch_once(&Static.token, { Static.instance = Grubby() })
             
             return Static.instance!
     	}
     }
 
     func fetchDataFromPath(path: String) {
-        var htmlData = NSData.dataWithContentsOfFile(path, options: nil, error: nil)
+        var htmlData = NSData(contentsOfFile: path) as NSData!
         if htmlData.length <= 0 {
         	self.portalCtr!.showInfoWithErrorData()
             return

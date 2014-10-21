@@ -78,7 +78,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
         var account = self.dataArray[indexPath!.row]
         cell.name!.text = account.name
         
-        var passwordUrl = NSURL(string: account.url)
+        var passwordUrl = NSURL(string: account.url) as NSURL!
         var logoUrl: String
         if let port = passwordUrl.port {
             logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host):\(port)/favicon.ico"

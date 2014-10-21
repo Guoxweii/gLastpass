@@ -125,7 +125,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
 
         var passwordUrl = NSURL(string: accounts[indexPath!.row].url)
         var logoUrl: String
-        logoUrl = fetchIcoUrl(passwordUrl)
+        logoUrl = fetchIcoUrl(passwordUrl!)
 
         cell.logo!.setImageWithURL(NSURL(string: logoUrl), placeholderImage: UIImage(named: "bg"))
         
