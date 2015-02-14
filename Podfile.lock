@@ -4,20 +4,16 @@ PODS:
   - CocoaHTTPServer (2.3):
     - CocoaAsyncSocket
     - CocoaLumberjack
-  - CocoaLumberjack (2.0.0-beta):
-    - CocoaLumberjack/CLI
-    - CocoaLumberjack/Core
-    - CocoaLumberjack/Extensions
-  - CocoaLumberjack/CLI (2.0.0-beta):
-    - CocoaLumberjack/Core
-  - CocoaLumberjack/Core (2.0.0-beta)
-  - CocoaLumberjack/Extensions (2.0.0-beta):
+  - CocoaLumberjack (1.9.2):
+    - CocoaLumberjack/Extensions (= 1.9.2)
+  - CocoaLumberjack/Core (1.9.2)
+  - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
   - hpple (0.2.0)
   - JSONKit (1.5pre)
   - MBProgressHUD (0.8)
   - SDWebImage (3.6):
-    - SDWebImage/Core
+    - SDWebImage/Core (= 3.6)
   - SDWebImage/Core (3.6)
 
 DEPENDENCIES:
@@ -32,10 +28,10 @@ SPEC CHECKSUMS:
   APPinViewController: c15366d37316d02383a8eb5e7575b6f193f61691
   CocoaAsyncSocket: 45bdbbc1c0a5ed0640ff4c42af325ba43a2f099a
   CocoaHTTPServer: 217df4cba4e48803db2480f97b805aaad2230dd1
-  CocoaLumberjack: aadc76d7bd6c839ca84b38ed50cbf89d7cf8c693
+  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
   hpple: f4eb7c21a8db83ec264e5d614ec7509e10e5adec
   JSONKit: efef3bbd3372ff33f96b9c6f34cf4fe18e74ab69
   MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
   SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.36.0.beta.1

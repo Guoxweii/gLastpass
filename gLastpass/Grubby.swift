@@ -27,8 +27,10 @@ class Grubby: NSObject {
     }
 
     func fetchDataFromPath(path: String) {
-        var htmlData = NSData(contentsOfFile: path) as NSData!
-        if htmlData.length <= 0 {
+        var htmlString = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
+        htmlString = htmlString!.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
+        var htmlData = htmlString!.dataUsingEncoding(NSUTF8StringEncoding)
+        if htmlData!.length <= 0 {
         	self.portalCtr!.showInfoWithErrorData()
             return
         }
