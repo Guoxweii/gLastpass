@@ -73,7 +73,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
     
     func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
         let baseName = "baseCell";
-        let cell = tableView!.dequeueReusableCellWithIdentifier(baseName, forIndexPath: indexPath!) as BaseCell
+        let cell = tableView!.dequeueReusableCellWithIdentifier(baseName, forIndexPath: indexPath!) as! BaseCell
         
         var account = self.dataArray[indexPath!.row]
         cell.name!.text = account.name

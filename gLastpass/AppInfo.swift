@@ -34,7 +34,7 @@ class AppInfo: NSObject {
     
     func current_pin() -> String? {
         let defaults = NSUserDefaults.standardUserDefaults()
-        return defaults.stringForKey("pin")?
+        return defaults.stringForKey("pin")
     }
     
     func store_pin(pin: String?) {
@@ -44,7 +44,7 @@ class AppInfo: NSObject {
     
     func current_valid() -> String? {
         let defaults = NSUserDefaults.standardUserDefaults()
-        return defaults.stringForKey("valid")?
+        return defaults.stringForKey("valid")
     }
     
     func store_valid(valid: String?) {

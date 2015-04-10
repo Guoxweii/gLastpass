@@ -42,7 +42,7 @@ class Grubby: NSObject {
             return
         }
         
-        var element = elements[0] as TFHppleElement
+        var element = elements[0] as! TFHppleElement
         var passInfo : String? = element.text()
         self.parse(passInfo!)
         self.portalCtr!.fetchDataComplete()

@@ -114,8 +114,8 @@ class DetailViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-    	self.loginField!.text = self.login?
-        self.passwordField!.text = self.password?
+    	self.loginField!.text = self.login
+        self.passwordField!.text = self.password
     }
     
     func createHud(title: String) {

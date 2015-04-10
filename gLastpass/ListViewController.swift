@@ -42,7 +42,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         myActionSheet.showInView(self.view)
     }
     
-    func actionSheet(actionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int) {
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 0 {
             Grubby.sharedInstance.resetDataSource()
             
@@ -110,7 +110,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
         let baseName = "baseCell";
-    	let cell = self.tableView.dequeueReusableCellWithIdentifier(baseName, forIndexPath: indexPath!) as BaseCell
+    	let cell = self.tableView.dequeueReusableCellWithIdentifier(baseName, forIndexPath: indexPath!) as! BaseCell
     	
         let dataSource = Grubby.sharedInstance.dataSource
         var keys = Array<String>()
