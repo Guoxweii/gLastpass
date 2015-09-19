@@ -17,7 +17,7 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
         // Custom initialization
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -62,10 +62,9 @@ class DataImportViewController: UIViewController, UITextFieldDelegate {
             
             self.HUD!.showAnimated(true,
                     whileExecutingBlock: {
-                        println("start animation")
+                        print("start animation", terminator: "")
                         sleep(1)
                 	}, completionBlock: {
-                        println("animation finish")
                         if let hud = self.HUD {
                             hud.removeFromSuperview()
                             self.HUD = nil

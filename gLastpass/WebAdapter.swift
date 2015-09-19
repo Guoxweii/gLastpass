@@ -30,24 +30,32 @@ class WebAdapter: NSObject {
     
     func configuration() {
         DDLog.addLogger(DDTTYLogger.sharedInstance())
-        var httpServer = WebAdapter.sharedInstance
+        _ = WebAdapter.sharedInstance
         
         self.httpServer.setType("_http._tcp.")
+
+        let webFolder = NSBundle.mainBundle().pathForResource("index", ofType: "html", inDirectory: "Web") as NSString?
         var docRoot: String?
-        docRoot = NSBundle.mainBundle().pathForResource("index", ofType: "html", inDirectory: "Web")?.stringByDeletingLastPathComponent
+        docRoot = webFolder?.stringByDeletingLastPathComponent
         
         self.httpServer.setDocumentRoot(docRoot)
         self.httpServer.setConnectionClass(MyHTTPConnection)
     }
     
     func starServer() {
-        var error: NSError?
-        
-        if (self.httpServer.start(&error)) {
-            println("Started HTTP Server on port \(self.httpServer.listeningPort())")
-        } else {
-            println("ERROR: Started HTTP Server on port FAILED")
+        do {
+            try httpServer.start()
+        } catch {
+            print(error)
         }
+
+//        var error: NSError?
+//        
+//        if (self.httpServer.start()) {
+//            print("Started HTTP Server on port \(self.httpServer.listeningPort())")
+//        } else {
+//            prprintERROR;: Started HTTP Server on port FAILED")
+//        }
     }
     
     func stopServer() {

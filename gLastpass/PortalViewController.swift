@@ -77,7 +77,7 @@ class PortalViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue(), {
             self.HUD!.labelText = "导入成功，3秒后跳转"
             
-            print(Grubby.sharedInstance.dataSource)
+            print(Grubby.sharedInstance.dataSource, terminator: "")
 
             if Grubby.sharedInstance.dataSource.count > 0 {
                 let listCtr = ListViewController(nibName: "ListViewController", bundle: nil)

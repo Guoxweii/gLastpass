@@ -34,7 +34,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     }
     
     @IBAction func resetDataSource(sender : UIButton) {
-        var myActionSheet = UIActionSheet()
+        let myActionSheet = UIActionSheet()
         myActionSheet.delegate = self;
         myActionSheet.addButtonWithTitle("重置")
         myActionSheet.addButtonWithTitle("取消")
@@ -46,7 +46,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         if buttonIndex == 0 {
             Grubby.sharedInstance.resetDataSource()
             
-            var portalCtr = PortalViewController(nibName: "PortalViewController", bundle: nil)
+            let portalCtr = PortalViewController(nibName: "PortalViewController", bundle: nil)
             self.navigationController?.setViewControllers([portalCtr], animated: false)
         }
     }
@@ -92,9 +92,9 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         for (key, category) in dataSource {
 			keys.append(key)
         }
-        var currentKey = keys[section]
+        let currentKey = keys[section]
         
-		var category = dataSource[currentKey] as Group!
+		let category = dataSource[currentKey] as Group!
         return category.accounts.count
     }
     
@@ -117,13 +117,13 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
         for (key, category) in dataSource {
             keys.append(key)
         }
-        var currentKey = keys[indexPath!.section]
-        var category = dataSource[currentKey] as Group!
+        let currentKey = keys[indexPath!.section]
+        let category = dataSource[currentKey] as Group!
         var accounts = category.accounts
 
         cell.name!.text = accounts[indexPath!.row].name
 
-        var passwordUrl = NSURL(string: accounts[indexPath!.row].url)
+        let passwordUrl = NSURL(string: accounts[indexPath!.row].url)
         var logoUrl: String
         logoUrl = fetchIcoUrl(passwordUrl!)
 
@@ -135,11 +135,11 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     func fetchIcoUrl(url: NSURL) -> String {
         var icoUrl = ""
         
-        if let scheme = url.scheme {
-        	icoUrl += scheme
+//        if (url.scheme != nil) {
+        	icoUrl += url.scheme
             icoUrl += "://"
-        }
-        
+//        }
+
         if let host = url.host {
             icoUrl += host
         }
@@ -158,14 +158,14 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let dataSource = Grubby.sharedInstance.dataSource
         var keys = Array<String>()
-        for (key, category) in dataSource {
+        for (key, _) in dataSource {
             keys.append(key)
         }
-        var currentKey = keys[indexPath.section]
-        var category = dataSource[currentKey] as Group!
+        let currentKey = keys[indexPath.section]
+        let category = dataSource[currentKey] as Group!
         var accounts = category.accounts
         
-        var detailCtr = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        let detailCtr = DetailViewController(nibName: "DetailViewController", bundle: nil)
         detailCtr.title = accounts[indexPath.row].name
         detailCtr.login = accounts[indexPath.row].login
         detailCtr.password = accounts[indexPath.row].password
@@ -177,7 +177,7 @@ class ListViewController: UITableViewController, UIActionSheetDelegate {
     }
     
     func showSearchResult(account: Account) {
-        var detailCtr = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        let detailCtr = DetailViewController(nibName: "DetailViewController", bundle: nil)
         detailCtr.title = account.name
         detailCtr.login = account.login
         detailCtr.password = account.password

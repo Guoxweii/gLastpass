@@ -27,23 +27,23 @@ class Grubby: NSObject {
     }
 
     func fetchDataFromPath(path: String) {
-        var htmlString = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
+        var htmlString = try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
         htmlString = htmlString!.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
-        var htmlData = htmlString!.dataUsingEncoding(NSUTF8StringEncoding)
+        let htmlData = htmlString!.dataUsingEncoding(NSUTF8StringEncoding)
         if htmlData!.length <= 0 {
         	self.portalCtr!.showInfoWithErrorData()
             return
         }
         
-        var doc = TFHpple(HTMLData: htmlData)
+        let doc = TFHpple(HTMLData: htmlData)
         var elements : Array = doc.searchWithXPathQuery("//pre")
         if elements.count == 0 {
             self.portalCtr!.showInfoWithErrorData()
             return
         }
         
-        var element = elements[0] as! TFHppleElement
-        var passInfo : String? = element.text()
+        let element = elements[0] as! TFHppleElement
+        let passInfo : String? = element.text()
         self.parse(passInfo!)
         self.portalCtr!.fetchDataComplete()
     }
@@ -77,7 +77,7 @@ class Grubby: NSObject {
                 self.dataSource[groupName] = lineObject
             }
         
-            var account = Account(name: elementArray[4], url: elementArray[0], login: elementArray[1], password: elementArray[2], category: lineObject!)
+            let account = Account(name: elementArray[4], url: elementArray[0], login: elementArray[1], password: elementArray[2], category: lineObject!)
             lineObject!.accounts.append(account)
         }
     }

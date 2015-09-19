@@ -21,7 +21,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var copyPasswordButton : UIButton? = nil
     
     @IBAction func resetPin(sender : UIButton) {
-        var pinCtr = PinViewController(nibName: "PinViewController", bundle: nil)
+        let pinCtr = PinViewController(nibName: "PinViewController", bundle: nil)
         pinCtr.isEdit = true
         self.presentViewController(pinCtr, animated: true, completion: nil)
     }
@@ -33,12 +33,12 @@ class DetailViewController: UIViewController {
         self.login = "default"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     @IBAction func loginCopy(sender : UIButton) {
-        var pboard = UIPasteboard.generalPasteboard()
+        let pboard = UIPasteboard.generalPasteboard()
         pboard.string = self.login
         
         dispatch_async(dispatch_get_main_queue(), {
@@ -51,10 +51,10 @@ class DetailViewController: UIViewController {
             
             self.HUD!.showAnimated(true,
                 whileExecutingBlock: {
-                    println("start animation")
+                    print("start animation", terminator: "")
                     sleep(1)
                 }, completionBlock: {
-                    println("animation finish")
+//                    prprintanimation finish;")
                     if let hud = self.HUD {
                         hud.removeFromSuperview()
                         self.HUD = nil
@@ -65,7 +65,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func passwordCopy(sender : UIButton) {
-        var pboard = UIPasteboard.generalPasteboard()
+        let pboard = UIPasteboard.generalPasteboard()
         pboard.string = self.password
         
         dispatch_async(dispatch_get_main_queue(), {
@@ -78,10 +78,10 @@ class DetailViewController: UIViewController {
             
             self.HUD!.showAnimated(true,
                 whileExecutingBlock: {
-                    println("start animation")
+//                    prprintstart animation")
                     sleep(1)
                 }, completionBlock: {
-                    println("animation finish")
+                    print("animation finish", terminator: "")
                     if let hud = self.HUD {
                         hud.removeFromSuperview()
                         self.HUD = nil

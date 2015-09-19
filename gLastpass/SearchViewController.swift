@@ -18,7 +18,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
         // Custom initialization
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -39,13 +39,13 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
     func searchBar(searchBar: UISearchBar!, textDidChange searchText: String!) {
         self.dataArray.removeAll()
         
-        var searchTextWithoutSpace = searchText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let searchTextWithoutSpace = searchText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         
         let dataSource = Grubby.sharedInstance.dataSource
         for (key, category) in dataSource {
             for account in category.accounts {
-                var urlStr = account.url
-                var nameStr = account.name
+                let urlStr = account.url
+                let nameStr = account.name
                 
                 if ((urlStr.lowercaseString.rangeOfString(searchTextWithoutSpace) != nil) || (nameStr.lowercaseString.rangeOfString(searchTextWithoutSpace) != nil )) {
                 	self.dataArray.append(account)
@@ -75,10 +75,10 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
         let baseName = "baseCell";
         let cell = tableView!.dequeueReusableCellWithIdentifier(baseName, forIndexPath: indexPath!) as! BaseCell
         
-        var account = self.dataArray[indexPath!.row]
+        let account = self.dataArray[indexPath!.row]
         cell.name!.text = account.name
         
-        var passwordUrl = NSURL(string: account.url) as NSURL!
+        let passwordUrl = NSURL(string: account.url) as NSURL!
         var logoUrl: String
         if let port = passwordUrl.port {
             logoUrl = "\(passwordUrl.scheme)://\(passwordUrl.host):\(port)/favicon.ico"
@@ -93,7 +93,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchDisplay
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         self.listCtr!.cancelSearch()
         
-        var account = self.dataArray[indexPath!.row]
+        let account = self.dataArray[indexPath!.row]
         self.listCtr!.showSearchResult(account)
     }
 }

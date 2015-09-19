@@ -61,12 +61,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let pass_info = AppInfo.sharedInstance.current_password_info() {
             Grubby.sharedInstance.parse(pass_info)
             
-            var listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
-            var baseCtr = UINavigationController(rootViewController: listCtr)
+            let listCtr = ListViewController(nibName: "ListViewController", bundle: nil)
+            let baseCtr = UINavigationController(rootViewController: listCtr)
             self.window!.rootViewController = baseCtr
         } else {
-            var portalCtr = PortalViewController(nibName: "PortalViewController", bundle: nil)
-            var baseCtr = UINavigationController(rootViewController: portalCtr)
+            let portalCtr = PortalViewController(nibName: "PortalViewController", bundle: nil)
+            let baseCtr = UINavigationController(rootViewController: portalCtr)
             self.window!.rootViewController = baseCtr
         }
     }
